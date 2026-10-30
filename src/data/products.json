@@ -1,602 +1,552 @@
 [
   {
-    "id": "ilu-001",
     "name": "Girasoles y flores amarillas",
     "price": 55,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-001-girasoles-y-flores-amarillas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": true,
-    "visible": true
+    "visible": true,
+    "id": "ilu-001"
   },
   {
-    "id": "ilu-002",
     "name": "Dúo de girasoles",
     "price": 25,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-002-duo-de-girasoles.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": true,
-    "visible": true
+    "visible": true,
+    "id": "ilu-002"
   },
   {
-    "id": "ilu-003",
     "name": "Ramo de girasoles en papel natural",
     "price": 50,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-003-ramo-de-girasoles-en-papel-natural.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-003"
   },
   {
-    "id": "ilu-004",
     "name": "Rosa amarilla con tarjeta",
     "price": 7,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-004-rosa-amarilla-con-tarjeta.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-004"
   },
   {
-    "id": "ilu-005",
     "name": "Ramo de rosas amarillas con lazo",
     "price": 45,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-005-ramo-de-rosas-amarillas-con-lazo.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-005"
   },
   {
-    "id": "ilu-006",
     "name": "Rosa amarilla individual",
-    "price": 7,
+    "price": 8,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-006-rosa-amarilla-individual.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-006"
   },
   {
-    "id": "ilu-007",
     "name": "Rosas amarillas en envoltura verde",
     "price": 48,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-007-rosas-amarillas-en-envoltura-verde.jpg",
     "referencePhoto": true,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-007"
   },
   {
-    "id": "ilu-008",
     "name": "Dos rosas eternas amarillas",
     "price": 15,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-008-dos-rosas-eternas-amarillas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-008"
   },
   {
-    "id": "ilu-009",
     "name": "Ramo de seis girasoles eternos",
     "price": 115,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-009-ramo-de-seis-girasoles-eternos.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-009"
   },
   {
-    "id": "ilu-010",
     "name": "Ramo amarillo, blanco y rosado",
     "price": 45,
     "category": "Arreglos florales",
     "collection": "Flores amarillas",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-010-ramo-amarillo-blanco-y-rosado.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-010"
   },
   {
-    "id": "ilu-011",
     "name": "Rosas y lirios en lila",
     "price": 85,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-011-rosas-y-lirios-en-lila.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": true,
-    "visible": true
+    "visible": true,
+    "id": "ilu-011"
   },
   {
-    "id": "ilu-012",
     "name": "Dulzura en rosa",
     "price": 80,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-012-dulzura-en-rosa.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": true,
-    "visible": true
+    "visible": true,
+    "id": "ilu-012"
   },
   {
-    "id": "ilu-013",
     "name": "Rosas rojas y flores blancas",
     "price": 75,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-013-rosas-rojas-y-flores-blancas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-013"
   },
   {
-    "id": "ilu-014",
     "name": "Tulipanes violetas",
     "price": 120,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-014-tulipanes-violetas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-014"
   },
   {
-    "id": "ilu-015",
     "name": "Ramo de rosas bicolor",
     "price": 110,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-015-ramo-de-rosas-bicolor.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-015"
   },
   {
-    "id": "ilu-016",
     "name": "Ramo con lazo lila",
     "price": 95,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-016-ramo-con-lazo-lila.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-016"
   },
   {
-    "id": "ilu-017",
     "name": "Detalle para mamá",
     "price": 65,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-017-detalle-para-mama.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-017"
   },
   {
-    "id": "ilu-018",
     "name": "Lirios y rosas con lazo lila",
     "price": 95,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-018-lirios-y-rosas-con-lazo-lila.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-018"
   },
   {
-    "id": "ilu-019",
     "name": "Arreglo floral «Te amo»",
     "price": 45,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-019-arreglo-floral-te-amo.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-019"
   },
   {
-    "id": "ilu-020",
     "name": "Arreglo de gerberas y flores blancas",
     "price": 95,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-020-arreglo-de-gerberas-y-flores-blancas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-020"
   },
   {
-    "id": "ilu-021",
     "name": "Rosas rojas con flores rosadas",
     "price": 50,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-021-rosas-rojas-con-flores-rosadas.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-021"
   },
   {
-    "id": "ilu-022",
     "name": "Virgen de Fátima con flores",
     "price": 65,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-022-virgen-de-fatima-con-flores.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-022"
   },
   {
-    "id": "ilu-023",
     "name": "Ramo floral con lazo rosado",
     "price": 115,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-023-ramo-floral-con-lazo-rosado.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-023"
   },
   {
-    "id": "ilu-024",
     "name": "Rosas y flores en tonos durazno",
     "price": 95,
     "category": "Arreglos florales",
     "collection": "Arreglos hechos con cariño",
     "image": "/Imagenes Catalogo/arreglos florales/ilu-024-rosas-y-flores-en-tonos-durazno.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-024"
   },
   {
-    "id": "ilu-025",
     "name": "Tulipanes tejidos",
     "price": 35,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-025-tulipanes-tejidos.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-025"
   },
   {
-    "id": "ilu-026",
     "name": "Muñeca rubia con tulipanes",
     "price": 110,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-026-muneca-rubia-con-tulipanes.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-026"
   },
   {
-    "id": "ilu-027",
     "name": "Muñeca con boina roja",
     "price": 90,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-027-muneca-con-boina-roja.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-027"
   },
   {
-    "id": "ilu-028",
     "name": "Virgencita tejida en cúpula",
     "price": 65,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-028-virgencita-tejida-en-cupula.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-028"
   },
   {
-    "id": "ilu-029",
     "name": "Hipopótamo tejido",
     "price": 45,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-029-hipopotamo-tejido.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-029"
   },
   {
-    "id": "ilu-030",
     "name": "Osito tejido con bufanda lila",
     "price": 55,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-030-osito-tejido-con-bufanda-lila.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-030"
   },
   {
-    "id": "ilu-031",
     "name": "Ovejita tejida",
     "price": 35,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-031-ovejita-tejida.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-031"
   },
   {
-    "id": "ilu-032",
     "name": "Princesa tejida",
     "price": 120,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-032-princesa-tejida.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-032"
   },
   {
-    "id": "ilu-033",
     "name": "Virgencita tejida en caja",
     "price": 85,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-033-virgencita-tejida-en-caja.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-033"
   },
   {
-    "id": "ilu-034",
     "name": "Conejita con vestido rosado",
     "price": 85,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-034-conejita-con-vestido-rosado.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-034"
   },
   {
-    "id": "ilu-035",
     "name": "Conejito tejido con camisa celeste",
     "price": 50,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-035-conejito-tejido-con-camisa-celeste.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-035"
   },
   {
-    "id": "ilu-036",
     "name": "Muñeca tejida con sombrero verde",
     "price": 90,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-036-muneca-tejida-con-sombrero-verde.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-036"
   },
   {
-    "id": "ilu-037",
     "name": "Conejita con lazo rosado",
     "price": 115,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-037-conejita-con-lazo-rosado.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-037"
   },
   {
-    "id": "ilu-038",
     "name": "Virgen de Guadalupe tejida",
     "price": 60,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-038-virgen-de-guadalupe-tejida.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-038"
   },
   {
-    "id": "ilu-039",
     "name": "Conejita tejida con lazo rojo",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-039-conejita-tejida-con-lazo-rojo.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-039"
   },
   {
-    "id": "ilu-040",
     "name": "Detalle de cumpleaños con osito",
     "price": 75,
     "category": "Peluches",
     "collection": "Peluches",
     "image": "/Imagenes Catalogo/peluches/ilu-040-detalle-de-cumpleanos-con-osito.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-040"
   },
   {
-    "id": "ilu-041",
     "name": "Sagrada Familia tejida en tonos suaves",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-041-sagrada-familia-tejida-en-tonos-suaves.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-041"
   },
   {
-    "id": "ilu-042",
     "name": "Sagrada Familia tejida a color",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-042-sagrada-familia-tejida-a-color.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-042"
   },
   {
-    "id": "ilu-043",
     "name": "Conejita tejida con corazón",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-043-conejita-tejida-con-corazon.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-043"
   },
   {
-    "id": "ilu-044",
     "name": "Virgen tejida con manto azul",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-044-virgen-tejida-con-manto-azul.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-044"
   },
   {
-    "id": "ilu-045",
     "name": "Osito tejido con overol rojo",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-045-osito-tejido-con-overol-rojo.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-045"
   },
   {
-    "id": "ilu-046",
     "name": "Osito tejido con traje azul",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-046-osito-tejido-con-traje-azul.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-046"
   },
   {
-    "id": "ilu-047",
     "name": "Conejita dormilona con lazo lila",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-047-conejita-dormilona-con-lazo-lila.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-047"
   },
   {
-    "id": "ilu-048",
     "name": "Osito tejido con corazón en caja",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-048-osito-tejido-con-corazon-en-caja.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-048"
   },
   {
-    "id": "ilu-049",
     "name": "Detalle tejido con osito y tulipanes",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-049-detalle-tejido-con-osito-y-tulipanes.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-049"
   },
   {
-    "id": "ilu-050",
     "name": "Conejita tejida con overol rosado",
     "price": 75,
     "category": "Amigurumis",
     "collection": "Amigurumis",
     "image": "/Imagenes Catalogo/amigurumis/ilu-050-conejita-tejida-con-overol-rosado.jpg",
     "referencePhoto": false,
-    "description": "",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "id": "ilu-050"
   }
 ]
