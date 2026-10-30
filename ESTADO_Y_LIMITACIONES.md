@@ -1,5 +1,7 @@
 # Estado de recuperación — 30 de octubre de 2026
 
+> **Actualización:** en el repositorio `ilusiones-cajamarca` de la cuenta de GitHub apareció un proyecto de septiembre con 50 productos, sus fotos y la historia de los abuelos. De ahí se tomaron los 26 productos faltantes y la historia. Ese repositorio no se modificó. La lista de abajo describe lo que había antes de ese hallazgo.
+
 ## Identidad confirmada
 
 - Proyecto principal: `appgprj_6aa6c191fcd48191ab57d0e28b8a10e6`

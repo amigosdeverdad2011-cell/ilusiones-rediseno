@@ -41,7 +41,8 @@
 - **Un teléfono real**: sin el aparato no se pueden confirmar al 100 % el tacto, el teclado ni la barra de direcciones.
 
 ## Datos que faltan o hay que confirmar
-- Las fotos reales (hoy son enlaces al sitio original) y los ~26 productos del catálogo histórico, si siguen vigentes.
-- La foto y el texto reales de los abuelos.
+- Precios de septiembre de los 26 productos recuperados del repositorio `ilusiones-cajamarca`: 12 están en S/ 75 y conviene confirmarlos.
+- Fotos a reemplazar: capturas de pantalla y la «Sagrada Familia tejida a color», que muestra la marca de otra cuenta.
+- Las 19 fotos de `amigurumis/` sin código `ilu-` y la foto de girasoles con rosas rojas: faltan nombre y precio.
 - Si existen promociones reales (para llenar `promotions`).
 - Redes sociales y horario: no hay datos verificados, por eso no aparecen.
