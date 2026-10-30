@@ -9,7 +9,7 @@ import storyData from './story.json';
 
 // Solo afecta al editor local (#admin con npm run dev): cambia este valor al editar products.json en la PC
 // para que las ediciones antiguas de ese navegador no tapen el catálogo. La web publicada no las usa.
-export const CATALOG_VERSION = '2026-10-30-50-productos';
+export const CATALOG_VERSION = '2026-10-30-70-productos';
 
 export const business = {
   name: 'Ilusiones',

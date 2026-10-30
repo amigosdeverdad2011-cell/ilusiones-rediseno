@@ -7,7 +7,3 @@ dist/
 # Se generan solas con scripts/fotos.mjs
 public/Imagenes Livianas/
 src/data/fotos-livianas.generated.json
-# Fotos sin nombre ni precio confirmados: no suben al repositorio público hasta aprobarlas.
-# Las fotos con código ilu- sí son del catálogo.
-public/Imagenes Catalogo/amigurumis/*
-!public/Imagenes Catalogo/amigurumis/ilu-*

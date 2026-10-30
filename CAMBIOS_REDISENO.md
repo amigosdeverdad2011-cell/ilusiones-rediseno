@@ -42,6 +42,7 @@
 
 ## Datos que faltan o hay que confirmar
 - Fotos a reemplazar: capturas de pantalla y la «Sagrada Familia tejida a color», que muestra la marca de otra cuenta.
-- Las 19 fotos de `amigurumis/` sin código `ilu-` y la foto de girasoles con rosas rojas: faltan nombre y precio.
+- Precios de los productos `ilu-052` a `ilu-070`: los propuso el desarrollador según cada imagen y los productos parecidos, a pedido del negocio. Conviene revisarlos.
+- Fotos de esos productos: cinco tienen marcas de otras cuentas y están marcadas como foto de referencia.
 - Si existen promociones reales (para llenar `promotions`).
 - Redes sociales y horario: no hay datos verificados, por eso no aparecen.
