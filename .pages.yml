@@ -50,10 +50,9 @@ content:
         type: boolean
         default: true
       - name: id
-        label: Código interno (se crea solo)
-        type: uuid
-        options:
-          editable: false
+        label: Código interno
+        type: string
+        hidden: true
 
   - name: promociones
     label: Promociones

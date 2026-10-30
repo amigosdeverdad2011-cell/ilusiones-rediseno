@@ -40,14 +40,14 @@ export default function Catalog({ catalog }) {
           {collectionNotes[group.name] && <p>{collectionNotes[group.name]}</p>}
         </header>
         <div className="product-grid">
-          {group.items.map((product) => <ProductCard key={product.id} product={product} />)}
+          {group.items.map((product) => <ProductCard key={product.id || product.name} product={product} />)}
         </div>
       </section>
     ));
   } else {
     results = (
       <div className="product-grid">
-        {visible.map((product) => <ProductCard key={product.id} product={product} />)}
+        {visible.map((product) => <ProductCard key={product.id || product.name} product={product} />)}
       </div>
     );
   }

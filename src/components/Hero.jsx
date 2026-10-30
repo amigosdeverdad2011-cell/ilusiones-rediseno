@@ -22,7 +22,7 @@ export default function Hero({ items, minPrice }) {
         {items.length > 0 && (
           <ul className="hero-strip" aria-label="Algunos de nuestros detalles">
             {items.map((item, index) => (
-              <li key={item.id} className="hero-item">
+              <li key={item.id || item.name} className="hero-item">
                 <a href={getWhatsAppLink(item.name)} target="_blank" rel="noopener noreferrer" aria-label={`Pedir ${item.name} por WhatsApp`}>
                   <span className="hero-photo">
                     <Photo src={item.image} alt="" priority={index === 0} width={640} height={800} />
