@@ -430,17 +430,6 @@
     "id": "ilu-039"
   },
   {
-    "name": "Detalle de cumpleaños con osito",
-    "price": 75,
-    "category": "Peluches",
-    "collection": "Peluches",
-    "image": "/Imagenes Catalogo/peluches/ilu-040-detalle-de-cumpleanos-con-osito.jpg",
-    "referencePhoto": false,
-    "featured": false,
-    "visible": true,
-    "id": "ilu-040"
-  },
-  {
     "name": "Sagrada Familia tejida en tonos suaves",
     "price": 75,
     "category": "Amigurumis",
@@ -769,5 +758,16 @@
     "referencePhoto": false,
     "featured": false,
     "visible": true
+  },
+  {
+    "name": "Detalle de cumpleaños con osito",
+    "price": 75,
+    "category": "Peluches",
+    "collection": "Peluches",
+    "image": "/Imagenes Catalogo/peluches/ilu-040-detalle-de-cumpleanos-con-osito.jpg",
+    "referencePhoto": false,
+    "featured": false,
+    "visible": true,
+    "id": "ilu-040"
   }
 ]

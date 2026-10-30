@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { getWhatsAppLink } from '../lib/links.js';
 
-// Dentro del catálogo se oculta: cada producto ya tiene su botón "Pedir" y así no lo tapa.
+// Sobre los productos se oculta: cada uno ya tiene su botón "Pedir" y así no lo tapa.
 export default function WhatsAppFab() {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const catalog = document.getElementById('catalogo');
-    if (!catalog || !('IntersectionObserver' in window)) return undefined;
-    // Cuenta como "dentro" cuando el catálogo ocupa la parte baja de la pantalla, donde va el botón.
+    const list = document.getElementById('catalogo-productos');
+    if (!list || !('IntersectionObserver' in window)) return undefined;
+    // Cuenta como "encima" cuando los productos ocupan la parte baja de la pantalla, donde va el botón.
     const observer = new IntersectionObserver(([entry]) => setHidden(entry.isIntersecting), { rootMargin: '-85% 0px 0px 0px' });
-    observer.observe(catalog);
+    observer.observe(list);
     return () => observer.disconnect();
   }, []);
 

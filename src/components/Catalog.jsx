@@ -144,7 +144,7 @@ export default function Catalog({ catalog }) {
           </div>
         </div>
 
-        {results}
+        <div id="catalogo-productos">{results}</div>
       </div>
     </section>
   );
