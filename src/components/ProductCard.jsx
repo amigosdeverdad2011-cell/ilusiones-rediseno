@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-media">
-        <Photo src={product.image} alt={product.name} width={640} height={800} fallbackLabel="Foto próximamente" />
+        <Photo src={product.image} alt={product.name} width={640} height={800} position={product.imagePosition} fallbackLabel="Foto próximamente" />
         {product.featured && <span className="badge badge-featured">Destacado</span>}
         {product.referencePhoto && <span className="badge badge-ref">Foto de referencia</span>}
       </div>

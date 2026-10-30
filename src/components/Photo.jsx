@@ -4,7 +4,8 @@ import { resolveImage } from '../lib/links.js';
 
 // Foto con respaldo: si falta la imagen o no carga, se muestra un recuadro suave en lugar de una imagen rota.
 // alt="" marca la foto como decorativa. priority=true es para la foto principal (carga primero).
-export default function Photo({ src, alt, className = '', priority = false, width, height, fallbackLabel = 'Foto próximamente' }) {
+// position ajusta el encuadre cuando la foto se recorta (por ejemplo '88% center').
+export default function Photo({ src, alt, className = '', priority = false, width, height, position, fallbackLabel = 'Foto próximamente' }) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [src]);
 
@@ -24,6 +25,7 @@ export default function Photo({ src, alt, className = '', priority = false, widt
       alt={alt}
       width={width}
       height={height}
+      style={position ? { objectPosition: position } : undefined}
       loading={priority ? 'eager' : 'lazy'}
       decoding="async"
       ref={(el) => {

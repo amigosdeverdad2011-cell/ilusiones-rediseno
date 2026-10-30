@@ -32,7 +32,7 @@ content:
       - name: collection
         label: Colección
         type: string
-        description: Grupo dentro del catálogo, por ejemplo Flores amarillas.
+        description: Grupo dentro del catálogo, por ejemplo Flores amarillas o Religiosos. Escríbelo igual para que se agrupen.
       - name: image
         label: Foto
         type: image
@@ -51,6 +51,10 @@ content:
         default: true
       - name: id
         label: Código interno
+        type: string
+        hidden: true
+      - name: imagePosition
+        label: Encuadre de la foto
         type: string
         hidden: true
 

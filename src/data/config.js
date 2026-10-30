@@ -9,7 +9,7 @@ import storyData from './story.json';
 
 // Solo afecta al editor local (#admin con npm run dev): cambia este valor al editar products.json en la PC
 // para que las ediciones antiguas de ese navegador no tapen el catálogo. La web publicada no las usa.
-export const CATALOG_VERSION = '2026-10-30-70-productos';
+export const CATALOG_VERSION = '2026-10-30-grupos';
 
 export const business = {
   name: 'Ilusiones',
@@ -33,7 +33,7 @@ export const business = {
 
 // Productos que aparecen en la portada, en este orden. En escritorio se muestran los tres primeros.
 // Conviene elegir fotos propias, no fotos de referencia.
-export const heroProductIds = ['ilu-012', 'ilu-011', 'ilu-014', 'ilu-001'];
+export const heroProductIds = ['ilu-011', 'ilu-012', 'ilu-014', 'ilu-001'];
 
 export const categories = ['Todos', 'Arreglos florales', 'Peluches', 'Amigurumis', 'A tu gusto'];
 
