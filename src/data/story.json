@@ -1,10 +1,11 @@
 {
-  "title": "Una ilusión que nace",
-  "titleAccent": "en familia",
+  "title": "Una historia familiar",
+  "titleAccent": "hecha con cariño",
   "paragraphs": [
-    "En Ilusiones creemos que los regalos más bonitos son los que transmiten lo que sentimos. Por eso, cada detalle busca llevar un poquito de cariño a quien lo recibe."
+    "Ilusiones nació en Cajamarca como un emprendimiento familiar hecho con cariño, dedicado a crear detalles especiales para cada ocasión. Aquí encontrarás peluches, tejidos, arreglos florales y regalos pensados para sorprender y emocionar.",
+    "Cada detalle se prepara con dedicación, buscando que cada obsequio exprese amor, gratitud y ternura. Esa calidez familiar es la esencia que queremos compartir contigo."
   ],
-  "photo": "",
-  "photoAlt": "Fundadores de Ilusiones",
-  "caption": "Un proyecto con corazón familiar"
+  "photo": "/Imagenes Catalogo/historia/abuelos-ilusiones.png",
+  "photoAlt": "Los abuelos de la familia Ilusiones, sonriendo juntos",
+  "caption": "Una historia familiar de Cajamarca"
 }

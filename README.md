@@ -60,7 +60,7 @@ Las 24 fotos del catálogo ya se guardaron en `public/Imagenes Catalogo/arreglos
 
 Las copias livianas se crean solas al abrir o publicar la web, si una foto pesa más de 300 KB o mide más de 1400 px; el original no se toca. Solo se publican las fotos que usa algún producto o la historia.
 
-La carpeta `public/Imagenes Catalogo/amigurumis/` no sube a GitHub (`.gitignore`) hasta que sus fotos tengan nombre y precio confirmados. Cuando las apruebes, quita esa línea.
+En `public/Imagenes Catalogo/amigurumis/` solo suben a GitHub las fotos cuyo nombre empieza con `ilu-` (`.gitignore`). Las demás esperan a tener nombre y precio confirmados: al aprobar una, renómbrala con su código o quita esa regla.
 
 ## 4.1 Editar desde el celular (Pages CMS)
 
