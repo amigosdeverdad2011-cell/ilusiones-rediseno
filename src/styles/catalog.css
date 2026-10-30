@@ -1,0 +1,111 @@
+/* ============================================================
+   Filtros y tarjetas de producto
+   ============================================================ */
+
+/* Catálogo */
+.catalog-section { padding-block: 40px var(--section-y); scroll-margin-top: var(--header-h); }
+@media (min-width: 720px) { .catalog-section { padding-top: 72px; } }
+
+/* Barra de categorías: se queda pegada bajo la cabecera mientras se baja por el catálogo */
+.category-bar { position: sticky; top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); z-index: 30; margin-top: 20px; padding-block: 8px; background: var(--cream); }
+
+.chip-row {
+  display: flex; gap: 8px; padding-block: 2px;
+  overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none;
+}
+.chip-row::-webkit-scrollbar { display: none; }
+.category-bar .chip-row { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+@media (min-width: 1240px) { .category-bar .chip-row { margin-inline: 0; padding-inline: 0; } }
+
+.chip {
+  flex: none; min-height: 44px; padding: 0 18px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink-soft);
+  font-size: 0.9rem; font-weight: 600; white-space: nowrap;
+  transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.chip:active { transform: scale(0.97); }
+.chip.is-active { border-color: var(--rose); background: var(--rose); color: #fff; }
+.chip-row-small .chip { padding: 0 14px; font-size: 0.85rem; }
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover { background: var(--rose-pale); color: var(--rose-deep); }
+  .chip.is-active:hover { background: var(--rose-deep); color: #fff; }
+}
+
+.toolbar { display: grid; gap: 10px; margin-block: 8px 20px; }
+.toolbar-top { display: flex; gap: 8px; }
+.search-field {
+  display: flex; flex: 1; align-items: center; gap: 10px; min-width: 0; min-height: 48px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--rose);
+}
+.search-field input { flex: 1; min-width: 0; min-height: 46px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 1rem; } /* 16px: el iPhone no hace zoom al enfocar */
+.search-field input::placeholder { color: var(--muted); }
+.search-field:focus-within { outline: 3px solid var(--rose); outline-offset: 2px; }
+
+.filter-toggle {
+  display: inline-flex; flex: none; align-items: center; gap: 8px; min-height: 48px; padding: 0 14px;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink-soft);
+  font-size: 0.9rem; font-weight: 600;
+  transition: transform 160ms var(--ease-out);
+}
+.filter-toggle:active { transform: scale(0.97); }
+.filter-toggle.is-active { border-color: var(--rose); color: var(--rose-deep); }
+
+.filter-panel { display: none; gap: 14px; padding-block: 4px; }
+.filter-panel.is-open { display: grid; }
+.budget-group { display: grid; gap: 8px; min-width: 0; }
+.toolbar-label { font-size: 0.875rem; font-weight: 600; color: var(--ink-soft); }
+.budget-group .chip-row { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+
+.sort-field { display: grid; gap: 8px; }
+.sort-field select {
+  min-height: 44px; padding: 0 36px 0 14px; border: 1px solid var(--line); border-radius: 12px; outline-offset: 2px;
+  background-color: var(--paper); font-size: 1rem; color: var(--ink-soft); cursor: pointer;
+}
+
+.toolbar-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; min-height: 28px; }
+.result-count { margin-right: auto; font-size: 0.875rem; color: var(--muted); }
+
+@media (min-width: 900px) {
+  .toolbar { grid-template-columns: minmax(240px, 1fr) auto; align-items: end; gap: 20px; }
+  .filter-toggle { display: none; }
+  .filter-panel, .filter-panel.is-open { display: flex; align-items: end; gap: 20px; padding: 0; }
+  .budget-group .chip-row { margin-inline: 0; padding-inline: 0; }
+  .toolbar-meta { grid-column: 1 / -1; }
+}
+
+/* Colecciones y rejilla de productos */
+.collection + .collection { margin-top: 56px; }
+.collection-head { margin-bottom: 18px; }
+.collection-head h3 { font-size: clamp(1.6rem, 4vw, 2.25rem); }
+.collection-head p { margin-top: 4px; color: var(--muted); }
+
+.product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+@media (min-width: 640px) { .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 16px; } }
+@media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 24px; } }
+
+.product-card { display: flex; flex-direction: column; }
+.product-media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-m); background: var(--rose-pale); }
+.product-media img, .product-media .photo-fallback { width: 100%; height: 100%; object-fit: cover; }
+.product-media img { transition: transform 500ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover .product-media img { transform: scale(1.04); }
+}
+
+.badge { position: absolute; left: 8px; padding: 4px 9px; border-radius: 999px; background: rgba(255, 253, 249, 0.94); font-size: 0.75rem; font-weight: 600; line-height: 1.25; }
+.badge-featured { top: 8px; color: var(--gold-deep); }
+.badge-ref { bottom: 8px; color: var(--ink-soft); }
+
+.product-body { display: flex; flex: 1; flex-direction: column; gap: 4px; padding-top: 10px; }
+.product-title { font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600; line-height: 1.3; letter-spacing: 0; }
+.product-description { font-size: 0.875rem; color: var(--muted); }
+.product-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 4px; }
+.product-price { font-size: 1.125rem; font-weight: 700; color: var(--rose-deep); white-space: nowrap; }
+.product-action { flex: none; gap: 6px; padding-inline: 12px; }
+
+/* Mensajes cuando no hay productos */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 56px 24px; border-radius: var(--radius-m); background: var(--rose-pale); text-align: center; color: var(--rose);
+}
+.empty-state h3 { font-size: 1.5rem; color: var(--ink); }
+.empty-state p { max-width: 44ch; margin-bottom: 8px; color: var(--ink-soft); }

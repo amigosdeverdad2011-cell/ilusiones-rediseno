@@ -1,0 +1,8 @@
+/* Punto de entrada de los estilos. El orden importa: primero la base, luego cada bloque de la página. */
+@import './tokens.css';
+@import './base.css';
+@import './header-hero.css';
+@import './catalog.css';
+@import './sections.css';
+@import './footer.css';
+@import './admin.css';

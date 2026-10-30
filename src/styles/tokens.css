@@ -1,0 +1,53 @@
+/* ============================================================
+   Colores, tipografía y medidas de Ilusiones.
+   Para cambiar la paleta de toda la página, edita solo este archivo.
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  /* Fondos */
+  --cream: #fbf6ee;        /* fondo general */
+  --cream-deep: #f4ebdd;   /* fondo de chips y campos suaves */
+  --paper: #fffdf9;        /* tarjetas */
+  --rose-pale: #f7e6e8;    /* secciones rosadas */
+  --rose-soft: #efd2d8;
+  --gold-pale: #f4e8d0;    /* secciones doradas */
+  --line: #ecdfd6;         /* bordes suaves */
+  --night: #382e30;        /* pie de página */
+
+  /* Texto */
+  --ink: #3a2f32;
+  --ink-soft: #5b4f52;
+  --muted: #6f6366;
+
+  /* Acentos */
+  --rose: #a94e66;
+  --rose-deep: #8f3f56;
+  --gold: #c9a25f;
+  --gold-deep: #8a6a2f;
+  --wa: #2f9a68;
+
+  /* Tipografía */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Medidas */
+  --radius-s: 12px;
+  --radius-m: 18px;
+  --radius-l: 28px;
+  --gutter: 20px;
+  --maxw: 1200px;
+  --header-h: 64px;
+  --section-y: 72px;
+}
+
+@media (min-width: 720px) {
+  :root { --gutter: 32px; --section-y: 104px; }
+}
+
+@media (min-width: 960px) {
+  :root { --header-h: 76px; --section-y: 128px; }
+}

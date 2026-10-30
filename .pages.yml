@@ -1,0 +1,101 @@
+# Configuración del panel Pages CMS (https://app.pagescms.org).
+media:
+  input: public/Imagenes Catalogo
+  output: /Imagenes Catalogo
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: productos
+    label: Productos
+    type: file
+    path: src/data/products.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Nombre
+        type: string
+        required: true
+      - name: price
+        label: Precio (S/)
+        type: number
+        required: true
+        options:
+          min: 0
+      - name: category
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values: [Arreglos florales, Peluches, Amigurumis, A tu gusto]
+      - name: collection
+        label: Colección
+        type: string
+        description: Grupo dentro del catálogo, por ejemplo Flores amarillas.
+      - name: image
+        label: Foto
+        type: image
+      - name: description
+        label: Descripción (opcional)
+        type: text
+      - name: referencePhoto
+        label: Es foto de referencia (no es del producto real)
+        type: boolean
+      - name: featured
+        label: Destacado
+        type: boolean
+      - name: visible
+        label: Visible en la web
+        type: boolean
+        default: true
+      - name: id
+        label: Código interno (se crea solo)
+        type: uuid
+        options:
+          editable: false
+
+  - name: promociones
+    label: Promociones
+    type: file
+    path: src/data/promotions.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: text
+        label: Descripción
+        type: text
+      - name: until
+        label: Vigencia
+        type: string
+        description: Por ejemplo, Hasta el 10 de mayo.
+
+  - name: historia
+    label: Historia
+    type: file
+    path: src/data/story.json
+    format: json
+    fields:
+      - name: title
+        label: Título
+        type: string
+      - name: titleAccent
+        label: Parte del título en cursiva
+        type: string
+      - name: paragraphs
+        label: Párrafos
+        type: text
+        list: true
+      - name: photo
+        label: Foto
+        type: image
+      - name: photoAlt
+        label: Descripción de la foto
+        type: string
+      - name: caption
+        label: Texto si no hay foto
+        type: string

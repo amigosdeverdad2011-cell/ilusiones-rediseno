@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+*.log
+# Se generan solas con scripts/fotos.mjs
+public/Imagenes Livianas/
+src/data/fotos-livianas.generated.json
+# Fotos sin nombre ni precio confirmados: no suben al repositorio público hasta aprobarlas
+public/Imagenes Catalogo/amigurumis/

@@ -1,0 +1,11 @@
+ILUSIONES - PROYECTO WEB EDITABLE
+--------------------------------
+1) Descomprime este ZIP.
+2) Abre la carpeta en VS Code, Claude Code, Codex o Antigravity.
+3) Lee PROMPT_PARA_CLAUDE_O_CODEX.md.
+4) Ejecuta INICIAR_EN_WINDOWS.bat para ver la web.
+5) Ejecuta DESCARGAR_FOTOS_EN_WINDOWS.bat para intentar guardar las imágenes localmente.
+
+Esta es una reconstrucción editable con los 24 productos actualmente visibles,
+NO una copia exacta del código interno original de ChatGPT Sites.
+No modifica el sitio original publicado.
