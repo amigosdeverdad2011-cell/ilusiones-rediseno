@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Gift, Search, SlidersHorizontal, X } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ChevronDown, Gift, Search, SlidersHorizontal, X } from 'lucide-react';
 import ProductCard from './ProductCard.jsx';
+import ProductSheet from './ProductSheet.jsx';
 import { categories, categoryInfo, collectionNotes } from '../data/config.js';
 import { priceRanges } from '../lib/useCatalog.js';
 import { getWhatsAppLink } from '../lib/links.js';
@@ -12,6 +13,40 @@ export default function Catalog({ catalog }) {
   // En celular los filtros van plegados para que los productos aparezcan antes.
   const [filtersOpen, setFiltersOpen] = useState(false);
   const activeFilters = (budget !== 'all' ? 1 : 0) + (sort !== 'original' ? 1 : 0);
+  // Cada grupo muestra primero unos pocos productos para que la página no sea interminable.
+  const [expanded, setExpanded] = useState([]);
+  const previewCount = window.matchMedia('(min-width: 1000px)').matches ? 8 : 6;
+  const [openedProduct, setOpenedProduct] = useState(null);
+  const toolbarRef = useRef(null);
+
+  // El botón "Atrás" del celular cierra la vista ampliada en lugar de salir de la página.
+  useEffect(() => {
+    const onBack = () => setOpenedProduct(null);
+    window.addEventListener('popstate', onBack);
+    return () => window.removeEventListener('popstate', onBack);
+  }, []);
+
+  function openProduct(product) {
+    window.history.pushState({ ficha: true }, '');
+    setOpenedProduct(product);
+  }
+
+  function closeProduct() {
+    setOpenedProduct(null);
+    if (window.history.state && window.history.state.ficha) window.history.back();
+  }
+
+  // Al cambiar de categoría estando más abajo, vuelve al inicio de los resultados.
+  function chooseCategory(name) {
+    setCategory(name);
+    const target = toolbarRef.current;
+    if (target && target.getBoundingClientRect().top < 0) {
+      const bar = document.querySelector('.category-bar');
+      const offset = bar ? bar.getBoundingClientRect().bottom + 8 : 0;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top - offset, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
 
   let results;
   if (categoryEmpty) {
@@ -33,21 +68,30 @@ export default function Catalog({ catalog }) {
       </div>
     );
   } else if (grouped) {
-    results = grouped.map((group, index) => (
-      <section className="collection" key={group.name} aria-labelledby={`coleccion-${index}`}>
-        <header className="collection-head">
-          <h3 id={`coleccion-${index}`}>{group.name}</h3>
-          {collectionNotes[group.name] && <p>{collectionNotes[group.name]}</p>}
-        </header>
-        <div className="product-grid">
-          {group.items.map((product) => <ProductCard key={product.id || product.name} product={product} />)}
-        </div>
-      </section>
-    ));
+    results = grouped.map((group, index) => {
+      const isOpen = expanded.includes(group.name) || group.items.length <= previewCount + 2;
+      const shown = isOpen ? group.items : group.items.slice(0, previewCount);
+      return (
+        <section className="collection" key={group.name} aria-labelledby={`coleccion-${index}`}>
+          <header className="collection-head">
+            <h3 id={`coleccion-${index}`}>{group.name}</h3>
+            {collectionNotes[group.name] && <p>{collectionNotes[group.name]}</p>}
+          </header>
+          <div className="product-grid">
+            {shown.map((product) => <ProductCard key={product.id || product.name} product={product} onOpen={openProduct} />)}
+          </div>
+          {!isOpen && (
+            <button type="button" className="btn btn-ghost show-more" onClick={() => setExpanded([...expanded, group.name])}>
+              Ver los {group.items.length} de {group.name} <ChevronDown size={18} aria-hidden="true" />
+            </button>
+          )}
+        </section>
+      );
+    });
   } else {
     results = (
       <div className="product-grid">
-        {visible.map((product) => <ProductCard key={product.id || product.name} product={product} />)}
+        {visible.map((product) => <ProductCard key={product.id || product.name} product={product} onOpen={openProduct} />)}
       </div>
     );
   }
@@ -68,9 +112,10 @@ export default function Catalog({ catalog }) {
                 type="button"
                 className={category === name ? 'chip is-active' : 'chip'}
                 aria-pressed={category === name}
-                onClick={() => setCategory(name)}
+                onClick={() => chooseCategory(name)}
               >
                 {name}
+                {name !== 'Todos' && categoryTotals[name] > 0 && <span className="chip-count">{categoryTotals[name]}</span>}
               </button>
             ))}
           </div>
@@ -78,7 +123,7 @@ export default function Catalog({ catalog }) {
       </div>
 
       <div className="container">
-        <div className="toolbar">
+        <div className="toolbar" ref={toolbarRef}>
           <div className="toolbar-top">
             <label className="search-field">
               <span className="sr-only">Buscar productos</span>
@@ -146,6 +191,7 @@ export default function Catalog({ catalog }) {
 
         <div id="catalogo-productos">{results}</div>
       </div>
+      {openedProduct && <ProductSheet product={openedProduct} onClose={closeProduct} />}
     </section>
   );
 }

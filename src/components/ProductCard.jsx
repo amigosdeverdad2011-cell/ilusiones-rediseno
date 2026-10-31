@@ -3,14 +3,14 @@ import { MessageCircle } from 'lucide-react';
 import Photo from './Photo.jsx';
 import { formatPrice, getWhatsAppLink } from '../lib/links.js';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onOpen }) {
   return (
     <article className="product-card">
-      <div className="product-media">
-        <Photo src={product.image} alt={product.name} width={640} height={800} position={product.imagePosition} fallbackLabel="Foto próximamente" />
+      <button type="button" className="product-media" aria-label={`Ver ${product.name} en grande`} onClick={() => onOpen(product)}>
+        <Photo src={product.image} alt="" width={640} height={800} position={product.imagePosition} fallbackLabel="Foto próximamente" />
         {product.featured && <span className="badge badge-featured">Destacado</span>}
         {product.referencePhoto && <span className="badge badge-ref">Foto de referencia</span>}
-      </div>
+      </button>
       <div className="product-body">
         <h3 className="product-title">{product.name}</h3>
         {product.description && <p className="product-description">{product.description}</p>}
