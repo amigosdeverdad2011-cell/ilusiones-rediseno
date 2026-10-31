@@ -70,6 +70,16 @@ Con `npm run dev` abierto, escribe `#admin` al final de la dirección (por ejemp
 Los cambios se guardan **solo en ese navegador**; para llevarlos al proyecto usa *Exportar JSON* y copia el contenido a `src/data/products.json`.
 Este panel no tiene contraseña: no es un administrador real. Por eso **no se incluye en `npm run build`**: en la página publicada `#admin` no abre nada. Para uno público hace falta un servidor con inicio de sesión.
 
-## 6. Publicar una copia
+## 6. Publicar en Cloudflare Pages (tienda definitiva)
+
+Conecta este repositorio en Cloudflare Pages con estos datos:
+
+- **Comando de compilación:** `npm run build`
+- **Carpeta de salida:** `dist`
+- **Variable `COPIA_PRUEBA` = `true`:** oculta la web de los buscadores. Quítala solo cuando la tienda esté aprobada, y vuelve a publicar.
+
+No hace falta `VITE_BASE_PATH`. La versión de Node está en `.node-version`.
+
+## 7. Publicar una copia
 
 Sube la carpeta a un repositorio nuevo y activa **Settings → Pages → Source: GitHub Actions**. El flujo de `.github/workflows` publica una copia; la tienda original no se toca.
