@@ -72,11 +72,13 @@ Este panel no tiene contraseña: no es un administrador real. Por eso **no se in
 
 ## 6. Publicar en Cloudflare Pages (tienda definitiva)
 
-Conecta este repositorio en Cloudflare Pages con estos datos:
+La tienda ya está conectada y se publica sola en https://ilusiones-flores-regalos.pages.dev/ con cada cambio en GitHub. Por ahora se usa esa dirección gratis; no hay dominio comprado. Si un día compras uno, necesitarás un QR nuevo.
+
+Si hubiera que conectar el repositorio de nuevo, usa estos datos:
 
 - **Comando de compilación:** `npm run build`
 - **Carpeta de salida:** `dist`
-- **Variable `COPIA_PRUEBA` = `true`:** oculta la web de los buscadores. Quítala solo cuando la tienda esté aprobada, y vuelve a publicar.
+- **Variable `COPIA_PRUEBA` = `true`:** oculta la web de los buscadores. Hoy está activa. Quítala solo cuando la tienda esté aprobada, y vuelve a publicar.
 
 No hace falta `VITE_BASE_PATH`. La versión de Node está en `.node-version`.
 
