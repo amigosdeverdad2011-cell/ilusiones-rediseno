@@ -19,7 +19,7 @@ export function isCampaignActive() {
 }
 
 // Banner de temporada (config.js → campaign). Fuera de sus fechas no ocupa espacio.
-export default function Campaign({ products, onShowCollection }) {
+export default function Campaign({ products }) {
   const active = useMemo(isCampaignActive, []);
   const countdown = useMemo(campaignCountdown, []);
   const photos = useMemo(
@@ -39,7 +39,7 @@ export default function Campaign({ products, onShowCollection }) {
           <p className="campaign-text">{campaign.text}</p>
           {countdown && <p className="campaign-countdown">{countdown}</p>}
           <div className="campaign-actions">
-            <a className="btn btn-primary" href="#catalogo" onClick={() => onShowCollection(campaign.collection, campaign.category)}>
+            <a className="btn btn-primary" href="#religiosos">
               {campaign.buttonLabel} <ArrowDown size={18} aria-hidden="true" />
             </a>
             <a className="btn btn-ghost" href={getWhatsAppMessageLink(campaign.whatsappMessage)} target="_blank" rel="noopener noreferrer">

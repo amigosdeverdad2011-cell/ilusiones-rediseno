@@ -112,11 +112,16 @@ button, .btn, .chip { -webkit-user-select: none; user-select: none; -webkit-touc
 /* Entrada suave de las secciones al aparecer en pantalla (solo transform y opacity) */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
 .js .reveal.is-in { opacity: 1; transform: none; }
+.js .reveal .section-title, .js .reveal .section-lead {
+  opacity: 0; transform: translateY(10px); transition: opacity 450ms var(--ease-out), transform 450ms var(--ease-out);
+}
+.js .reveal.is-in .section-title { opacity: 1; transform: none; transition-delay: 60ms; }
+.js .reveal.is-in .section-lead { opacity: 1; transform: none; transition-delay: 120ms; }
 
 @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; }
-  .js .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .js .reveal, .js .reveal .section-title, .js .reveal .section-lead { opacity: 1; transform: none; }
 }

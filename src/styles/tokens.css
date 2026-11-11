@@ -12,6 +12,8 @@
   --rose-pale: #f7e6e8;    /* secciones rosadas */
   --rose-soft: #efd2d8;
   --gold-pale: #f4e8d0;    /* secciones doradas */
+  --turquoise-pale: #dcefee; /* acento turquesa (mantos de las virgencitas): fondos suaves */
+  --turquoise-soft: #a9d7d6;
   --line: #ecdfd6;         /* bordes suaves */
   --night: #382e30;        /* pie de página y banner de temporada */
   --night-heading: #f9ebe8;
@@ -31,6 +33,8 @@
   --gold: #c9a25f;
   --gold-deep: #8a6a2f;
   --gold-brand: #94752f;   /* nombre "Ilusiones" de la cabecera */
+  --turquoise: #1f7a86;    /* acento turquesa: textos e íconos sobre fondos claros */
+  --turquoise-deep: #155a63;
   --wa: #2f9a68;
 
   /* Tipografía */
@@ -46,7 +50,7 @@
   --radius-l: 28px;
   --gutter: 20px;
   --maxw: 1200px;
-  --header-h: 76px;
+  --header-h: 72px;       /* alto de la cabecera ya encogida al bajar */
   --section-y: 72px;
 }
 
@@ -55,5 +59,9 @@
 }
 
 @media (min-width: 960px) {
-  :root { --header-h: 96px; --section-y: 128px; }
+  :root { --section-y: 128px; }
+}
+
+@media (min-width: 1100px) {
+  :root { --header-h: 84px; }
 }

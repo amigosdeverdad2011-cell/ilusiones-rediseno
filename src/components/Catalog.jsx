@@ -3,20 +3,41 @@ import { ChevronDown, Gift, Search, SlidersHorizontal, X } from 'lucide-react';
 import CustomOrderCard from './CustomOrderCard.jsx';
 import ProductCard from './ProductCard.jsx';
 import ProductSheet from './ProductSheet.jsx';
-import { categories, categoryInfo, collectionNotes, customOrder } from '../data/config.js';
-import { priceRanges } from '../lib/useCatalog.js';
+import { categories, categoryInfo, collectionNotes, customOrder, featured, religiousCollection } from '../data/config.js';
+import { FEATURED, priceRanges } from '../lib/useCatalog.js';
 import { getWhatsAppLink } from '../lib/links.js';
 
+// Cuántos productos se ven antes de "Ver más", y cuántos más aparecen con cada toque.
+const PAGE = 8;
+
+// Grilla con "Ver más": empieza corta y crece de a PAGE productos.
+function ProductList({ items, onOpen, label }) {
+  const [count, setCount] = useState(PAGE);
+  const shown = items.slice(0, count);
+  const left = items.length - shown.length;
+  return (
+    <>
+      <div className="product-grid">
+        {shown.map((product, index) => (
+          <ProductCard key={product.id || product.name} product={product} onOpen={onOpen} style={{ '--i': index % PAGE }} />
+        ))}
+      </div>
+      {left > 0 && (
+        <button type="button" className="btn btn-ghost show-more" onClick={() => setCount(count + PAGE)}>
+          Ver más {label} ({left}) <ChevronDown size={18} aria-hidden="true" />
+        </button>
+      )}
+    </>
+  );
+}
+
 export default function Catalog({ catalog }) {
-  const { category, setCategory, collection, setCollection, budget, setBudget, sort, setSort, query, setQuery, visible, grouped, categoryTotals, hasFilters, reset } = catalog;
-  const categoryEmpty = category !== 'Todos' && !(categoryTotals[category] > 0);
+  const { category, setCategory, budget, setBudget, sort, setSort, query, setQuery, searching, visible, religious, categoryTotals, hasFilters, reset } = catalog;
+  const categoryEmpty = !searching && category !== FEATURED && !(categoryTotals[category] > 0);
   const info = categoryInfo[category] || {};
   // En celular los filtros van plegados para que los productos aparezcan antes.
   const [filtersOpen, setFiltersOpen] = useState(false);
   const activeFilters = (budget !== 'all' ? 1 : 0) + (sort !== 'original' ? 1 : 0);
-  // Cada grupo muestra primero unos pocos productos para que la página no sea interminable.
-  const [expanded, setExpanded] = useState([]);
-  const previewCount = window.matchMedia('(min-width: 1000px)').matches ? 8 : 6;
   const [openedProduct, setOpenedProduct] = useState(null);
   const toolbarRef = useRef(null);
 
@@ -40,6 +61,7 @@ export default function Catalog({ catalog }) {
   // Al cambiar de categoría estando más abajo, vuelve al inicio de los resultados.
   function chooseCategory(name) {
     setCategory(name);
+    setQuery('');
     const target = toolbarRef.current;
     if (target && target.getBoundingClientRect().top < 0) {
       const bar = document.querySelector('.category-bar');
@@ -48,6 +70,12 @@ export default function Catalog({ catalog }) {
       window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top - offset, behavior: reduce ? 'auto' : 'smooth' });
     }
   }
+
+  const viewTitle = searching ? 'Resultados de tu búsqueda' : category === FEATURED ? featured.title : category;
+  const viewNote = searching ? '' : category === FEATURED ? featured.note : '';
+  const showCustom = customOrder && !searching && (category === FEATURED || category === customOrder.category);
+  // La clave hace que la lista vuelva a empezar corta (y se anime) cada vez que cambia lo que se está viendo.
+  const viewKey = [category, budget, sort, query.trim()].join('|');
 
   let results;
   if (categoryEmpty) {
@@ -68,35 +96,15 @@ export default function Catalog({ catalog }) {
         <button type="button" className="btn btn-primary" onClick={reset}>Limpiar filtros</button>
       </div>
     );
-  } else if (grouped) {
-    // La tarjeta de personalizados va una sola vez, en el primer grupo que tenga amigurumis.
-    const customGroup = customOrder && grouped.find((group) => group.items.some((p) => p.category === customOrder.category));
-    results = grouped.map((group, index) => {
-      const isOpen = collection !== null || expanded.includes(group.name) || group.items.length <= previewCount + 2;
-      const shown = isOpen ? group.items : group.items.slice(0, previewCount);
-      return (
-        <section className="collection" key={group.name} aria-labelledby={`coleccion-${index}`}>
-          <header className="collection-head">
-            <h3 id={`coleccion-${index}`}>{group.name}</h3>
-            {collectionNotes[group.name] && <p>{collectionNotes[group.name]}</p>}
-          </header>
-          <div className="product-grid">
-            {shown.map((product) => <ProductCard key={product.id || product.name} product={product} onOpen={openProduct} />)}
-            {group === customGroup && <CustomOrderCard />}
-          </div>
-          {!isOpen && (
-            <button type="button" className="btn btn-ghost show-more" onClick={() => setExpanded([...expanded, group.name])}>
-              Ver los {group.items.length} de {group.name} <ChevronDown size={18} aria-hidden="true" />
-            </button>
-          )}
-        </section>
-      );
-    });
   } else {
     results = (
-      <div className="product-grid">
-        {visible.map((product) => <ProductCard key={product.id || product.name} product={product} onOpen={openProduct} />)}
-      </div>
+      <section className="collection" aria-labelledby="vista-titulo">
+        <header className="collection-head">
+          <h3 id="vista-titulo">{viewTitle}</h3>
+          {viewNote && <p>{viewNote}</p>}
+        </header>
+        <ProductList key={viewKey} items={visible} onOpen={openProduct} label={searching ? 'resultados' : category === FEATURED ? 'personajes' : category.toLocaleLowerCase('es')} />
+      </section>
     );
   }
 
@@ -114,12 +122,12 @@ export default function Catalog({ catalog }) {
               <button
                 key={name}
                 type="button"
-                className={category === name ? 'chip is-active' : 'chip'}
-                aria-pressed={category === name}
+                className={category === name && !searching ? 'chip is-active' : 'chip'}
+                aria-pressed={category === name && !searching}
                 onClick={() => chooseCategory(name)}
               >
                 {name}
-                {name !== 'Todos' && categoryTotals[name] > 0 && <span className="chip-count">{categoryTotals[name]}</span>}
+                {categoryTotals[name] > 0 && <span className="chip-count">{categoryTotals[name]}</span>}
               </button>
             ))}
           </div>
@@ -130,10 +138,11 @@ export default function Catalog({ catalog }) {
         <div className="toolbar" ref={toolbarRef}>
           <div className="toolbar-top">
             <label className="search-field">
-              <span className="sr-only">Buscar productos</span>
+              <span className="sr-only">Buscar en todo el catálogo</span>
               <Search size={19} aria-hidden="true" />
               <input
                 type="search"
+                name="buscar"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Buscar un detalle…"
@@ -185,20 +194,26 @@ export default function Catalog({ catalog }) {
             <p className="result-count" aria-live="polite">
               {visible.length} {visible.length === 1 ? 'producto' : 'productos'}
             </p>
-            {collection && (
-              <button type="button" className="chip chip-filter is-active" onClick={() => setCollection(null)} aria-label={`Quitar el filtro ${collection}`}>
-                {collection} <X size={15} aria-hidden="true" />
-              </button>
-            )}
             {hasFilters && (
               <button type="button" className="link-button" onClick={reset}>
-                <X size={15} aria-hidden="true" /> Limpiar filtros
+                <X size={15} aria-hidden="true" /> Volver a destacados
               </button>
             )}
           </div>
         </div>
 
         <div id="catalogo-productos">{results}</div>
+        {showCustom && <CustomOrderCard />}
+
+        {!searching && religious.length > 0 && (
+          <section className="collection religious-block" id="religiosos" aria-labelledby="religiosos-titulo">
+            <header className="collection-head">
+              <h3 id="religiosos-titulo">{religiousCollection}</h3>
+              {collectionNotes[religiousCollection] && <p>{collectionNotes[religiousCollection]}</p>}
+            </header>
+            <ProductList items={religious} onOpen={openProduct} label="religiosos" />
+          </section>
+        )}
       </div>
       {openedProduct && <ProductSheet product={openedProduct} onClose={closeProduct} />}
     </section>

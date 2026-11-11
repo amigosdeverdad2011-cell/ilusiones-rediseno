@@ -25,11 +25,11 @@ export default function SendGift() {
   ];
 
   return (
-    <section className="section gift-section reveal" id="enviar" aria-labelledby="enviar-title">
+    <section className="section gift-section reveal" id="como-pedir" aria-labelledby="enviar-title">
       <div className="container gift-inner">
         <div className="gift-copy">
-          <h2 id="enviar-title" className="section-title">Envía un regalo <em>a Cajamarca</em></h2>
-          <p className="section-lead">Flores y peluches a domicilio en Cajamarca, y amigurumis que viajan a otras provincias. ¿Estás lejos? Nosotros lo preparamos y lo entregamos por ti.</p>
+          <h2 id="enviar-title" className="section-title">Cómo pedir <em>o enviar un regalo</em></h2>
+          <p className="section-lead">Pide por WhatsApp en tres pasos. Flores y peluches a domicilio en Cajamarca, y amigurumis que viajan a provincias: si estás lejos, lo preparamos y lo entregamos por ti.</p>
 
           <dl className="gift-facts">
             <div>

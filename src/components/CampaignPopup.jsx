@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowDown, Sparkles, X } from 'lucide-react';
+import { ArrowDown, Sparkles, Star, X } from 'lucide-react';
 import Photo from './Photo.jsx';
 import { campaign } from '../data/config.js';
 import { campaignCountdown, isCampaignActive } from './Campaign.jsx';
@@ -16,7 +16,7 @@ function alreadySeen() {
 
 // Anuncio de temporada que aparece al entrar. Se muestra una vez por visita y se cierra con la X,
 // con la tecla Escape o tocando fuera.
-export default function CampaignPopup({ products, onShowCollection }) {
+export default function CampaignPopup({ products }) {
   const dialog = useRef(null);
   const [open, setOpen] = useState(false);
   const countdown = useMemo(campaignCountdown, []);
@@ -47,8 +47,6 @@ export default function CampaignPopup({ products, onShowCollection }) {
   }
 
   if (!open) return null;
-  // El texto se repite dos veces para que el deslizamiento no tenga cortes.
-  const ticker = [...campaign.ticker, ...campaign.ticker];
 
   return (
     <dialog
@@ -81,25 +79,50 @@ export default function CampaignPopup({ products, onShowCollection }) {
             <strong>{campaign.popupNote}</strong>
             {countdown && <span> · {countdown}</span>}
           </p>
-          <a
-            className="btn btn-primary announce-action"
-            href="#catalogo"
-            onClick={() => {
-              onShowCollection(campaign.collection, campaign.category);
-              dialog.current.close();
-            }}
-          >
+          <a className="btn btn-primary announce-action" href="#religiosos" onClick={() => dialog.current.close()}>
             {campaign.popupButton} <ArrowDown size={18} aria-hidden="true" />
           </a>
         </div>
-        <div className="announce-ticker" aria-hidden="true">
-          <ul>
-            {ticker.map((text, index) => (
-              <li key={index}>{text}</li>
-            ))}
-          </ul>
-        </div>
+        <FestiveTicker items={campaign.ticker} />
       </div>
     </dialog>
+  );
+}
+
+// Copos de nieve: posición horizontal, tamaño, duración y retraso, fijos para que no cambien en cada pintado.
+const FLAKES = [
+  [4, 5, 9, 0], [14, 3, 11, 3], [23, 6, 10, 6], [33, 4, 12, 1.5], [44, 5, 9.5, 4.5], [55, 3, 11.5, 0.8],
+  [64, 6, 10.5, 5.5], [73, 4, 9, 2.5], [82, 5, 12, 7], [91, 3, 10, 3.8], [97, 4, 11, 1],
+];
+
+// Cinta navideña: el texto se desliza despacio y sin cortes, con nieve, estrellas y fuegos artificiales suaves.
+// Las dos mitades son idénticas: al llegar a la mitad, la animación vuelve al inicio sin que se note.
+function FestiveTicker({ items }) {
+  const group = (copy) => (
+    <ul className="ticker-group" aria-hidden={copy === 1 || undefined}>
+      {items.map((text) => (
+        <li key={text}>
+          <span>{text}</span>
+          <Star className="ticker-star" size={14} strokeWidth={2.2} aria-hidden="true" />
+        </li>
+      ))}
+    </ul>
+  );
+  return (
+    <div className="announce-ticker" aria-hidden="true">
+      <div className="ticker-sky">
+        {FLAKES.map(([left, size, duration, delay]) => (
+          <span key={left} className="flake" style={{ left: `${left}%`, width: size, height: size, animationDuration: `${duration}s`, animationDelay: `-${delay}s` }} />
+        ))}
+        <span className="burst burst-a" />
+        <span className="burst burst-b" />
+        <Sparkles className="ticker-spark ticker-spark-a" size={16} />
+        <Sparkles className="ticker-spark ticker-spark-b" size={12} />
+      </div>
+      <div className="ticker-track">
+        {group(0)}
+        {group(1)}
+      </div>
+    </div>
   );
 }

@@ -36,5 +36,6 @@ export function resolveImage(path) {
 export function formatPrice(value) {
   const number = Number(value);
   if (!Number.isFinite(number) || number <= 0) return 'Consultar precio';
-  return Number.isInteger(number) ? `S/ ${number}` : `S/ ${number.toFixed(2)}`;
+  // Espacio que no se corta: "S/" y el número siempre quedan en la misma línea.
+  return Number.isInteger(number) ? `S/ ${number}` : `S/ ${number.toFixed(2)}`;
 }

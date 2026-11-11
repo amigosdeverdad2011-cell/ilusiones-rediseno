@@ -1,25 +1,56 @@
 /* ============================================================
    Cabecera y portada
    ============================================================ */
+/* Cabecera: turquesa de los mantos, rosa pálido y dorado pálido. Grande arriba; se encoge al bajar. */
 .site-header {
   position: sticky; top: 0; z-index: 40; padding-top: env(safe-area-inset-top, 0px);
-  background: var(--rose-pale); box-shadow: 0 1px 0 rgba(143, 63, 86, 0.14);
+  background: linear-gradient(115deg, var(--turquoise-pale) 0%, var(--rose-pale) 52%, var(--gold-pale) 100%);
+  box-shadow: 0 6px 22px rgba(21, 90, 99, 0.12);
+  transition: box-shadow 300ms var(--ease-out);
 }
-.header-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--header-h); }
+.site-header.is-compact { box-shadow: 0 4px 14px rgba(21, 90, 99, 0.16); }
+.header-inner {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: var(--header-h); padding-block: 14px; transition: padding 300ms var(--ease-out);
+}
+.is-compact .header-inner { padding-block: 0; } /* así mide justo --header-h y no tapa la barra de categorías */
 
-.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; min-height: 44px; }
-.brand-mark { width: 56px; height: 56px; flex-shrink: 0; transition: transform 400ms var(--ease-out); }
-.brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-name { font-family: var(--font-serif); font-weight: 600; font-size: 2rem; letter-spacing: -0.02em; color: var(--gold-brand); }
-.brand-sub { margin-top: 6px; font-size: 0.8125rem; color: var(--ink-soft); }
-@media (min-width: 960px) {
-  .brand-mark { width: 72px; height: 72px; }
-  .brand-name { font-size: 2.5rem; }
-  .brand-sub { font-size: 0.9375rem; }
+.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 1; min-width: 0; min-height: 44px; }
+.brand-mark {
+  width: 72px; height: 72px; flex-shrink: 0; border-radius: 50%;
+  filter: drop-shadow(0 6px 10px rgba(143, 63, 86, 0.28));
+  transition: width 300ms var(--ease-out), height 300ms var(--ease-out), transform 400ms var(--ease-out);
+}
+.brand-text { display: flex; flex-direction: column; min-width: 0; line-height: 1; }
+.brand-name {
+  font-family: var(--font-serif); font-weight: 600; font-size: 2.6rem; letter-spacing: -0.02em; color: var(--gold-brand);
+  text-shadow: 0 2px 0 rgba(255, 253, 249, 0.9), 0 6px 14px rgba(148, 117, 47, 0.3);
+  transition: font-size 300ms var(--ease-out);
+}
+.brand-sub {
+  margin-top: 7px; font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; color: var(--turquoise-deep);
+  white-space: nowrap; transition: font-size 300ms var(--ease-out);
+}
+.is-compact .brand-mark { width: 50px; height: 50px; }
+.is-compact .brand-name { font-size: 1.85rem; }
+.is-compact .brand-sub { font-size: 0.8125rem; }
+@media (max-width: 380px) {
+  .brand-mark { width: 60px; height: 60px; }
+  .brand-name { font-size: 2.25rem; }
+  .brand-sub { font-size: 0.8125rem; }
+}
+@media (min-width: 1100px) {
+  .brand-mark { width: 92px; height: 92px; }
+  .brand-name { font-size: 3.4rem; }
+  .brand-sub { font-size: 1.0625rem; }
+  .is-compact .brand-mark { width: 60px; height: 60px; }
+  .is-compact .brand-name { font-size: 2.2rem; }
+  .is-compact .brand-sub { font-size: 0.875rem; }
 }
 @media (hover: hover) and (pointer: fine) {
-  .brand:hover .brand-mark { transform: rotate(-6deg) scale(1.05); }
+  .brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
 }
+.brand:active .brand-mark { transform: scale(0.94); }
 
 .header-actions { display: flex; align-items: center; gap: 8px; }
 /* En celular el botón flotante ya lleva a WhatsApp: el botón de la cabecera solo aparece en escritorio */
@@ -34,7 +65,7 @@
 /* Menú en celular: panel que se despliega bajo la cabecera */
 .site-nav {
   display: none; position: absolute; top: 100%; left: calc(var(--gutter) * -1); right: calc(var(--gutter) * -1);
-  flex-direction: column; padding: 8px var(--gutter) 24px; background: var(--rose-pale);
+  flex-direction: column; padding: 8px var(--gutter) 24px; background: var(--paper);
   box-shadow: 0 18px 30px rgba(58, 47, 50, 0.12);
 }
 .site-nav.is-open { display: flex; }
@@ -44,16 +75,21 @@
   .site-nav a:hover { color: var(--rose); }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1100px) {
   .menu-toggle { display: none; }
   .header-cta { display: inline-flex; }
   .site-nav {
     display: flex; position: static; flex-direction: row; gap: 28px;
     padding: 0; background: transparent; box-shadow: none;
   }
-  .site-nav a { min-height: 44px; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+  .site-nav a { position: relative; min-height: 44px; font-size: 0.9375rem; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+  .site-nav a::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; border-radius: 2px;
+    background: var(--turquoise); transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--ease-out);
+  }
+  .site-nav a:hover::after { transform: scaleX(1); }
 }
-@media (min-width: 960px) and (max-width: 1139px) {
+@media (min-width: 1100px) and (max-width: 1279px) {
   .site-nav { gap: 18px; }
   .header-cta .only-wide { display: none; }
 }

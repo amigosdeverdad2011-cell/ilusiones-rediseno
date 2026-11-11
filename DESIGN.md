@@ -10,6 +10,10 @@ colors:
   dorado-profundo: "#8a6a2f"
   dorado-marca: "#94752f"
   dorado-palido: "#f4e8d0"
+  turquesa: "#1f7a86"
+  turquesa-profundo: "#155a63"
+  turquesa-suave: "#a9d7d6"
+  turquesa-palido: "#dcefee"
   crema: "#fbf6ee"
   crema-honda: "#f4ebdd"
   papel: "#fffdf9"
@@ -192,6 +196,12 @@ Una paleta cálida y contenida: crema de base, rosa antiguo como única voz de a
 - **Dorado de marca** (#94752f): solo el nombre "Ilusiones" en la cabecera. Hoy está escrito directamente en `header-hero.css`, no en `tokens.css`.
 - **Dorado pálido** (#f4e8d0): fondo de la sección "Fechas para regalar".
 
+### Accent (turquesa)
+- **Turquesa** (#1f7a86) y **turquesa profundo** (#155a63): sacados del manto de la virgencita tejida (ilu-044). Se usan en el subtítulo de la marca ("Peluches · Flores · Amigurumis"), la línea bajo los enlaces del menú y el final del degradado de la cinta navideña.
+- **Turquesa pálido** (#dcefee) y **turquesa suave** (#a9d7d6): fondos suaves. Inician el degradado de la cabecera (turquesa pálido → rosa pálido → dorado pálido), el fondo de la ubicación y el borde y fondo del bloque "Pídelo personalizado".
+
+**The Mantle Rule.** El turquesa acompaña, no manda: va en degradados suaves junto al rosa y al dorado, o en detalles finos. Nunca como fondo sólido de una sección entera ni en botones de acción (esos siguen en rosa antiguo).
+
 ### Tertiary
 - **Amarillo floral**: [por definir]. Es solo para campañas (flores amarillas el 21 de septiembre, Año Nuevo). No existe en el código todavía. Se define cuando haya una campaña real; el logo tiene un amarillo dorado (#dcc36f) como referencia, sin adoptarlo aún.
 
@@ -289,7 +299,8 @@ Refinados y contenidos: superficies planas, píldoras amables y una respuesta t�
 - **Selector de orden:** papel, borde línea, radio de 12 px y 44 px de alto.
 
 ### Navigation
-- **Cabecera fija** en papel, con el logo de marca (44 px) más "Ilusiones" en Playfair dorado y el subtítulo en tinta apagada.
+- **Cabecera fija** con degradado turquesa pálido → rosa pálido → dorado pálido y sombra suave. Arriba de todo la marca se ve grande (osito de 72 px y "Ilusiones" a 2.6rem en celular; 92 px y 3.4rem en computadora) con sombra dorada en el nombre y el subtítulo en turquesa profundo. Al bajar más de 40 px se encoge (50 px y 1.85rem) en 300 ms.
+- El menú en fila aparece desde 1100 px; debajo, botón de menú. Los enlaces muestran una línea turquesa al pasar el mouse.
 - **Celular:** botón de menú redondo de 44 px que despliega un panel de papel con enlaces de 52 px de alto a 1.0625rem.
 - **Escritorio (960 px o más):** enlaces en fila con 28 px de separación, DM Sans 600 a 0.9rem en tinta suave, que pasan a rosa con hover, más el botón "Pedir por WhatsApp".
 

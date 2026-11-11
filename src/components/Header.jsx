@@ -4,15 +4,24 @@ import { getWhatsAppLink, resolveImage } from '../lib/links.js';
 
 export default function Header({ hasPromotions }) {
   const [open, setOpen] = useState(false);
+  // Arriba de todo la marca se ve grande; al bajar, la cabecera se encoge para dejar espacio a los productos.
+  const [compact, setCompact] = useState(false);
+  // React ignora el cambio si el valor no cambia, así que solo vuelve a pintar al cruzar los 40 px.
+  useEffect(() => {
+    const onScroll = () => setCompact(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const close = () => setOpen(false);
 
   const links = [
     { href: '#catalogo', label: 'Catálogo' },
+    { href: '#religiosos', label: 'Religiosos' },
     ...(hasPromotions ? [{ href: '#promociones', label: 'Promociones' }] : []),
+    { href: '#como-pedir', label: 'Cómo pedir' },
     { href: '#historia', label: 'Nuestra historia' },
     { href: '#ubicacion', label: 'Ubicación' },
-    { href: '#enviar', label: 'Enviar un regalo' },
-    { href: '#como-pedir', label: 'Cómo pedir' },
   ];
 
   useEffect(() => {
@@ -25,10 +34,10 @@ export default function Header({ hasPromotions }) {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <header className={compact ? 'site-header is-compact' : 'site-header'}>
       <div className="container header-inner">
         <a href="#inicio" className="brand" onClick={close}>
-          <img className="brand-mark" src={resolveImage('/logo/ilusiones-marca.svg')} alt="" width="64" height="64" />
+          <img className="brand-mark" src={resolveImage('/logo/ilusiones-marca.svg')} alt="" width="92" height="92" />
           <span className="brand-text">
             <span className="brand-name">Ilusiones</span>
             <span className="brand-sub">Peluches · Flores · Amigurumis</span>

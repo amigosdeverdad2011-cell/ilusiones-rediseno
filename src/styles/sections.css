@@ -28,23 +28,6 @@
   .date-card { padding: 24px 22px; }
 }
 
-/* Cómo pedir */
-.steps { display: grid; gap: 28px; margin-top: 40px; counter-reset: paso; }
-.step { position: relative; padding-left: 64px; counter-increment: paso; }
-.step::before {
-  content: counter(paso); position: absolute; left: 0; top: 0;
-  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
-  background: var(--rose); color: #fff; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500;
-}
-.step h3 { font-size: 1.4rem; }
-.step p { margin-top: 6px; max-width: 40ch; color: var(--ink-soft); }
-.order-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 44px; }
-.order-delivery { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; color: var(--rose-deep); }
-@media (min-width: 900px) {
-  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
-  .step { padding-left: 0; padding-top: 68px; }
-}
-
 /* Historia familiar */
 .story-section { background: var(--rose-pale); }
 .story-inner { display: grid; gap: 40px; align-items: center; }
@@ -121,11 +104,53 @@ html:has(.announce[open]) { overflow: hidden; }
 .announce-note strong { color: var(--rose-deep); }
 .announce-action { width: 100%; margin-top: 18px; }
 /* Texto que se desliza sin parar al pie del anuncio */
-.announce-ticker { overflow: hidden; background: var(--rose); color: #fff; }
-.announce-ticker ul { display: flex; width: max-content; animation: ticker 22s linear infinite; }
-.announce-ticker li { display: flex; align-items: center; padding: 12px 0; font-size: 0.9375rem; font-weight: 600; white-space: nowrap; }
-.announce-ticker li::after { content: ''; width: 6px; height: 6px; margin-inline: 16px; border-radius: 50%; background: var(--gold-pale); }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Cinta navideña: texto que se desliza despacio, nieve que cae, estrellas que brillan y fuegos artificiales suaves */
+.announce-ticker {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(100deg, var(--rose-deep) 0%, var(--rose) 45%, var(--turquoise) 100%); color: #fff;
+}
+.ticker-track { display: flex; width: max-content; padding-block: 15px; animation: ticker 48s linear infinite; will-change: transform; }
+.ticker-group { display: flex; flex: none; }
+.ticker-group li { display: flex; align-items: center; flex: none; font-size: 1rem; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 2px rgba(58, 47, 50, 0.35); }
+.ticker-star { flex: none; margin-inline: 20px; color: var(--gold-pale); fill: var(--gold-pale); }
+@keyframes ticker { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+
+.ticker-sky { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.flake {
+  position: absolute; top: -8px; border-radius: 50%; background: #fff; opacity: 0.85;
+  animation: flake-fall 10s linear infinite;
+}
+@keyframes flake-fall {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  12% { opacity: 0.9; }
+  50% { transform: translate3d(6px, 30px, 0); }
+  100% { transform: translate3d(-4px, 64px, 0); opacity: 0; }
+}
+.ticker-spark { position: absolute; color: var(--gold-pale); animation: twinkle 2.8s ease-in-out infinite; }
+.ticker-spark-a { top: 6px; left: 30%; }
+.ticker-spark-b { bottom: 6px; right: 22%; animation-delay: 1.3s; }
+/* Fuego artificial: un anillo de puntos que se abre y se apaga */
+.burst {
+  position: absolute; width: 4px; height: 4px; border-radius: 50%; color: var(--gold-pale);
+  box-shadow: 0 -14px 0 currentColor, 10px -10px 0 currentColor, 14px 0 0 currentColor, 10px 10px 0 currentColor,
+    0 14px 0 currentColor, -10px 10px 0 currentColor, -14px 0 0 currentColor, -10px -10px 0 currentColor;
+  opacity: 0; animation: burst 4.6s var(--ease-out) infinite;
+}
+.burst-a { top: 50%; left: 14%; }
+.burst-b { top: 40%; right: 9%; color: var(--turquoise-pale); animation-delay: 2.3s; }
+@keyframes burst {
+  0%, 55% { opacity: 0; transform: scale(0.2); }
+  62% { opacity: 1; }
+  90%, 100% { opacity: 0; transform: scale(1.25); }
+}
+.announce-photo .flake { z-index: 1; }
+
+/* Con "reducir movimiento" la cinta queda quieta y sin efectos que se muevan */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none !important; transform: none; }
+  .flake, .burst, .ticker-spark, .announce-spark { animation: none !important; opacity: 0; }
+  .ticker-spark { opacity: 1; }
+}
 
 /* Envía un regalo a Cajamarca */
 .gift-section { background: var(--paper); }
@@ -146,7 +171,7 @@ html:has(.announce[open]) { overflow: hidden; }
 }
 
 /* Ubicación */
-.visit-section { background: var(--gold-pale); }
+.visit-section { background: linear-gradient(180deg, var(--turquoise-pale) 0%, var(--cream) 100%); }
 .visit-inner { display: grid; gap: 32px; }
 .visit-facts { display: grid; gap: 16px; margin-top: 24px; }
 .visit-facts li { display: flex; gap: 12px; color: var(--ink-soft); }
@@ -159,4 +184,3 @@ html:has(.announce[open]) { overflow: hidden; }
 @media (min-width: 900px) {
   .visit-inner { grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: center; }
 }
-.order-delivery { min-height: 44px; text-decoration: underline; text-decoration-color: var(--rose-soft); text-underline-offset: 4px; }

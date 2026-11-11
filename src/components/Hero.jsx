@@ -48,7 +48,7 @@ export default function Hero({ items, minPrice }) {
           </div>
           <ul className="hero-facts">
             {minPrice != null && <li>Desde {formatPrice(minPrice)}</li>}
-            {business.deliveryOffered && <li><a href="#enviar">Delivery en Cajamarca</a></li>}
+            {business.deliveryOffered && <li><a href="#como-pedir">Delivery en Cajamarca</a></li>}
             {nextDate && <li>{nextDate.name}: {daysLabel(nextDate.days).toLowerCase()}</li>}
           </ul>
         </div>

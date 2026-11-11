@@ -78,7 +78,7 @@ Si hubiera que conectar el repositorio de nuevo, usa estos datos:
 
 - **Comando de compilación:** `npm run build`
 - **Carpeta de salida:** `dist`
-- **Variable `COPIA_PRUEBA` = `true`:** oculta la web de los buscadores. Hoy está activa. Quítala solo cuando la tienda esté aprobada, y vuelve a publicar.
+- **Buscadores:** desde el 10/11/2026 la tienda de Cloudflare aparece en Google. La variable `COPIA_PRUEBA` solo oculta la copia de GitHub Pages (la que se publica en una subcarpeta); en Cloudflare ya no tiene efecto y se puede borrar.
 
 No hace falta `VITE_BASE_PATH`. La versión de Node está en `.node-version`.
 

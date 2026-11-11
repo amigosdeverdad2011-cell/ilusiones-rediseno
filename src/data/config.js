@@ -45,7 +45,7 @@ export const giftDelivery = {
 };
 
 // Campaña de temporada: se muestra sola entre "from" y "until" (mes y día, ambos incluidos) y luego desaparece.
-// productIds son fotos propias del catálogo; "collection" es el grupo que abre el botón del banner.
+// productIds son fotos propias del catálogo. Los botones del banner y del anuncio llevan al bloque de religiosos.
 export const campaign = {
   id: 'navidad',
   from: { month: 11, day: 1 },
@@ -61,8 +61,6 @@ export const campaign = {
   popupButton: 'Mira nuestro catálogo',
   ticker: ['Separa con tiempo', 'Nacimientos tejidos a mano', 'Virgencitas para regalar', 'Hechos con cariño en Cajamarca'],
   productIds: ['ilu-041', 'ilu-033', 'ilu-044'],
-  collection: 'Religiosos',
-  category: 'Amigurumis',
   buttonLabel: 'Ver nacimientos y virgencitas',
   whatsappMessage: '¡Hola, Ilusiones! 🌸 Quisiera consultar por un nacimiento o una virgencita tejida para Navidad.',
 };
@@ -71,7 +69,18 @@ export const campaign = {
 // Conviene elegir fotos propias, no fotos de referencia.
 export const heroProductIds = ['ilu-026', 'ilu-071', 'ilu-072', 'ilu-073', 'ilu-032'];
 
-export const categories = ['Todos', 'Amigurumis', 'Arreglos florales', 'Peluches', 'A tu gusto'];
+// La primera es la vista inicial del catálogo: una selección corta (ver "featured") para que la página no sea interminable.
+export const categories = ['Destacados', 'Amigurumis', 'Arreglos florales', 'Peluches', 'A tu gusto'];
+
+// Selección de la vista inicial: los personajes y las muñecas tejidas.
+export const featured = {
+  title: 'Personajes y muñecas',
+  note: 'Tejidos a mano por la abuela, uno por uno.',
+  test: (p) => p.collection === 'Personajes' || /^(muñec|princesa)/i.test(p.name),
+};
+
+// Grupo que tiene su propio bloque al final del catálogo (el banner de Navidad lleva ahí).
+export const religiousCollection = 'Religiosos';
 
 // Texto de cada categoría. "emptyNote" se muestra mientras la categoría no tiene productos verificados.
 export const categoryInfo = {

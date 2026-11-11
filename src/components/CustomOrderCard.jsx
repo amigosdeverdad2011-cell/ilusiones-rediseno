@@ -10,7 +10,7 @@ export default function CustomOrderCard() {
       <Sparkles size={30} strokeWidth={1.4} aria-hidden="true" />
       <h3>{customOrder.title}</h3>
       <p>{customOrder.text}</p>
-      <a className="btn btn-primary btn-sm custom-card-action" href={getWhatsAppMessageLink(customOrder.whatsappMessage)} target="_blank" rel="noopener noreferrer">
+      <a className="btn btn-primary custom-card-action" href={getWhatsAppMessageLink(customOrder.whatsappMessage)} target="_blank" rel="noopener noreferrer">
         <MessageCircle size={16} aria-hidden="true" /> {customOrder.buttonLabel}
       </a>
     </article>

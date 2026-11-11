@@ -37,7 +37,7 @@
   .whatsapp-fab:hover { transform: scale(1.06); }
 }
 /* En escritorio la cabecera ya tiene el botón de WhatsApp */
-@media (min-width: 960px) {
+@media (min-width: 1100px) {
   .whatsapp-fab { display: none; }
 }
 

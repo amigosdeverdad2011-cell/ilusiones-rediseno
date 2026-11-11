@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Download, Plus, Trash2, Upload, X } from 'lucide-react';
 import { categories } from '../data/config.js';
 
-const OPTIONS = categories.filter((name) => name !== 'Todos');
+// La primera categoría ("Destacados") es una vista del catálogo, no una categoría de producto.
+const OPTIONS = categories.slice(1);
 const BLANK = {
   id: '', name: '', price: 0, category: OPTIONS[0], collection: 'Arreglos hechos con cariño',
   image: '', referencePhoto: false, description: '', featured: false, visible: true,

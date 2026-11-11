@@ -5,7 +5,6 @@ import Campaign from './components/Campaign.jsx';
 import CampaignPopup from './components/CampaignPopup.jsx';
 import Catalog from './components/Catalog.jsx';
 import Promotions from './components/Promotions.jsx';
-import HowToOrder from './components/HowToOrder.jsx';
 import SendGift from './components/SendGift.jsx';
 import Story from './components/Story.jsx';
 import Visit from './components/Visit.jsx';
@@ -63,17 +62,16 @@ export default function App() {
       <Header hasPromotions={promotions.length > 0} />
       <main id="contenido">
         <Hero items={hero} minPrice={catalog.minPrice} />
-        <Campaign products={products} onShowCollection={catalog.showCollection} />
+        <Campaign products={products} />
         <Catalog catalog={catalog} />
         <Promotions items={promotions} />
+        <SendGift />
         <Story />
         <Visit />
-        <SendGift />
-        <HowToOrder />
       </main>
       <Footer />
       <WhatsAppFab />
-      {!adminOpen && <CampaignPopup products={products} onShowCollection={catalog.showCollection} />}
+      {!adminOpen && <CampaignPopup products={products} />}
       {/* El editor no tiene contraseña: solo existe con npm run dev, nunca en la página publicada. */}
       {import.meta.env.DEV && adminOpen && <AdminPanel products={products} onChange={updateProducts} onReset={resetProducts} onClose={closeAdmin} />}
     </>
