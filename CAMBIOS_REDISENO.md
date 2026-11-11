@@ -42,12 +42,19 @@
 
 ## Datos que faltan o hay que confirmar
 - Fotos a reemplazar: capturas de pantalla y la «Sagrada Familia tejida a color», que muestra la marca de otra cuenta.
-- Precios de los productos `ilu-052` a `ilu-070`: los propuso el desarrollador según cada imagen y los productos parecidos, a pedido del negocio. Conviene revisarlos.
+- Precios de los productos `ilu-052` a `ilu-070`: los propuso el desarrollador a pedido del negocio y el negocio los confirmó el 10/11/2026.
 - Fotos de esos productos: cinco tienen marcas de otras cuentas y están marcadas como foto de referencia.
 - Si existen promociones reales (para llenar `promotions`).
 - Redes sociales y horario: no hay datos verificados, por eso no aparecen.
 
 ## Fase 2 — 10 de noviembre de 2026
-- Nuevos en Personajes: `ilu-071` Espadachín tejido con haori verde (S/ 85), `ilu-072` Ninja tejido con capa de nubes rojas (S/ 85) y `ilu-073` Muñeco rosado tejido con capa morada (S/ 90). Sus fotos son de referencia (no son piezas propias) y los precios los propuso Claude a pedido del negocio, en línea con los demás personajes (S/ 65–110). Conviene confirmarlos.
+- Nuevos en Personajes: `ilu-071` Espadachín tejido con haori verde (S/ 85), `ilu-072` Ninja tejido con capa de nubes rojas (S/ 85) y `ilu-073` Muñeco rosado tejido con capa morada (S/ 90). Sus fotos son de referencia (no son piezas propias) y los precios los propuso Claude a pedido del negocio, en línea con los demás personajes (S/ 65–110). El negocio los confirmó el 10/11/2026.
 - La web ya no muestra la etiqueta "Foto de referencia": el negocio considera que el cliente lo sabe. El dato `referencePhoto` se conserva en `products.json` para control interno.
 - No se agregaron dos fotos de personajes porque llevan la marca de otras tiendas (NayeraCrochet by Grace y @azulecroche).
+
+## Fase 3 (estilo) — 10 de noviembre de 2026
+- Cabecera más grande con fondo rosa pálido; titular "Detalles que enamoran" en una sola tipografía.
+- Portada con la muñeca rubia, los tres personajes nuevos y la princesa.
+- Anuncio de Navidad al entrar (una vez por visita, se puede cerrar) con texto en movimiento; banner de Navidad en la paleta de la marca.
+- Envíos a Cajamarca y provincias del Perú, solo dentro del país. Pagos: Yape, Plin y transferencia, sin números publicados.
+- Solo se muestra la fecha de Navidad. Historia y ubicación suben antes de envíos. Botones con movimiento.

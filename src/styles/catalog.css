@@ -28,7 +28,7 @@
 .chip.is-active { border-color: var(--rose); background: var(--rose); color: #fff; }
 .chip-row-small .chip { padding: 0 14px; font-size: 0.85rem; }
 @media (hover: hover) and (pointer: fine) {
-  .chip:hover { background: var(--rose-pale); color: var(--rose-deep); }
+  .chip:hover { background: var(--rose-pale); color: var(--rose-deep); transform: translateY(-2px); }
   .chip.is-active:hover { background: var(--rose-deep); color: #fff; }
 }
 

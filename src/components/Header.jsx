@@ -9,10 +9,10 @@ export default function Header({ hasPromotions }) {
   const links = [
     { href: '#catalogo', label: 'Catálogo' },
     ...(hasPromotions ? [{ href: '#promociones', label: 'Promociones' }] : []),
-    { href: '#enviar', label: 'Enviar un regalo' },
-    { href: '#como-pedir', label: 'Cómo pedir' },
     { href: '#historia', label: 'Nuestra historia' },
     { href: '#ubicacion', label: 'Ubicación' },
+    { href: '#enviar', label: 'Enviar un regalo' },
+    { href: '#como-pedir', label: 'Cómo pedir' },
   ];
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Header({ hasPromotions }) {
     <header className="site-header">
       <div className="container header-inner">
         <a href="#inicio" className="brand" onClick={close}>
-          <img className="brand-mark" src={resolveImage('/logo/ilusiones-marca.svg')} alt="" width="44" height="44" />
+          <img className="brand-mark" src={resolveImage('/logo/ilusiones-marca.svg')} alt="" width="64" height="64" />
           <span className="brand-text">
             <span className="brand-name">Ilusiones</span>
             <span className="brand-sub">Peluches · Flores · Amigurumis</span>

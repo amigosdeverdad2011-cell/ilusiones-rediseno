@@ -5,7 +5,7 @@ import { getWhatsAppMessageLink } from '../lib/links.js';
 
 // "Envía un regalo a Cajamarca": para quienes viven en Lima o en el extranjero. Datos en config.js → giftDelivery.
 export default function SendGift() {
-  const { zones, payments, whatsappMessage } = giftDelivery;
+  const { payments, whatsappMessage } = giftDelivery;
   const steps = [
     {
       icon: MessageCircle,
@@ -15,12 +15,12 @@ export default function SendGift() {
     {
       icon: Wallet,
       title: `Separa con el ${business.advancePercent} % de adelanto`,
-      text: `Paga por ${payments.map((p) => p.name).join(', ').replace(/, ([^,]*)$/, ' o $1')}.`,
+      text: `Paga por ${payments.slice(0, -1).join(', ')} o ${payments[payments.length - 1].toLowerCase()}. Te damos los datos por WhatsApp.`,
     },
     {
       icon: Camera,
       title: 'Lo entregamos por ti',
-      text: 'Llevamos tu regalo a la puerta y te enviamos una foto de la entrega.',
+      text: 'En Cajamarca lo llevamos a la puerta; a otras provincias va por envío. Te mandamos una foto.',
     },
   ];
 
@@ -28,21 +28,20 @@ export default function SendGift() {
     <section className="section gift-section reveal" id="enviar" aria-labelledby="enviar-title">
       <div className="container gift-inner">
         <div className="gift-copy">
-          <p className="kicker">Flores y peluches a domicilio en Cajamarca</p>
           <h2 id="enviar-title" className="section-title">Envía un regalo <em>a Cajamarca</em></h2>
-          <p className="section-lead">¿Vives en Lima o en el extranjero? Sorprende a tu familia con un detalle hecho con cariño. Nosotros lo preparamos y lo entregamos.</p>
+          <p className="section-lead">Flores y peluches a domicilio en Cajamarca, y amigurumis que viajan a otras provincias. ¿Estás lejos? Nosotros lo preparamos y lo entregamos por ti.</p>
 
           <dl className="gift-facts">
             <div>
               <dt><MapPin size={18} aria-hidden="true" /> Entregamos en</dt>
-              <dd>{zones.join(' y ')}. El costo del envío depende de la zona y te lo confirmamos por WhatsApp.</dd>
+              <dd>Cajamarca y provincias del Perú (solo dentro del país). El costo depende del lugar y te lo confirmamos por WhatsApp.</dd>
             </div>
             <div>
               <dt><Wallet size={18} aria-hidden="true" /> Formas de pago</dt>
               <dd>
                 <ul className="gift-payments">
-                  {payments.map((p) => (
-                    <li key={p.name}><strong>{p.name}</strong> {p.detail}</li>
+                  {payments.map((name) => (
+                    <li key={name}><strong>{name}</strong></li>
                   ))}
                 </ul>
               </dd>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Photo from './Photo.jsx';
-import { business, story } from '../data/config.js';
+import { story } from '../data/config.js';
 import { getWhatsAppLink, resolveImage } from '../lib/links.js';
 
 export default function Story() {
@@ -18,7 +18,6 @@ export default function Story() {
           )}
         </div>
         <div className="story-copy">
-          <p className="kicker">{business.madeIn}</p>
           <h2 id="historia-title" className="section-title">{story.title} <em>{story.titleAccent}</em></h2>
           {story.paragraphs.map((text) => <p key={text}>{text}</p>)}
           <a className="text-link" href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">

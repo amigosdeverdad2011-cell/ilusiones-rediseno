@@ -37,15 +37,11 @@ export const business = {
 };
 
 // Bloque "Envía un regalo a Cajamarca". Zonas y pagos confirmados por el negocio el 10/11/2026.
-// No hay cuenta bancaria publicada: los datos de transferencia se envían por WhatsApp.
+// Entregas en Cajamarca y envíos a otras provincias del Perú; no se envía fuera del país.
+// Los números de Yape y Plin no se publican: se dan por WhatsApp al coordinar el pedido.
 export const giftDelivery = {
-  zones: ['Cajamarca ciudad', 'Baños del Inca'],
-  payments: [
-    { name: 'Yape', detail: '966 983 881' },
-    { name: 'Plin', detail: '966 983 881' },
-    { name: 'Transferencia', detail: 'Te enviamos los datos por WhatsApp' },
-  ],
-  whatsappMessage: '¡Hola, Ilusiones! 🌸 Vivo fuera de Cajamarca y quiero enviar un regalo. ¿Me ayudan a coordinarlo?',
+  payments: ['Yape', 'Plin', 'Transferencia'],
+  whatsappMessage: '¡Hola, Ilusiones! 🌸 Quiero enviar un regalo. ¿Me ayudan a coordinarlo?',
 };
 
 // Campaña de temporada: se muestra sola entre "from" y "until" (mes y día, ambos incluidos) y luego desaparece.
@@ -54,10 +50,16 @@ export const campaign = {
   id: 'navidad',
   from: { month: 11, day: 1 },
   until: { month: 12, day: 25 },
-  eyebrow: 'Navidad',
+  // Día de la campaña: sirve para contar los días que faltan.
+  day: { month: 12, day: 25, name: 'Navidad' },
   title: 'Nacimientos y virgencitas',
-  titleAccent: 'tejidos a mano',
-  text: 'Los teje la abuela de la familia, punto por punto, aquí en Cajamarca. Pide el tuyo con tiempo para tu Nochebuena o para regalar.',
+  subtitle: 'tejidos a mano',
+  text: 'Los teje la abuela de la familia, punto por punto, aquí en Cajamarca. Separa el tuyo con tiempo para tu Nochebuena o para regalar.',
+  // Anuncio que aparece al entrar a la página (una vez por visita). ticker es el texto que se desliza.
+  popupTitle: 'Llegó la Navidad a Ilusiones',
+  popupNote: 'Separa con tiempo',
+  popupButton: 'Mira nuestro catálogo',
+  ticker: ['Separa con tiempo', 'Nacimientos tejidos a mano', 'Virgencitas para regalar', 'Hechos con cariño en Cajamarca'],
   productIds: ['ilu-041', 'ilu-033', 'ilu-044'],
   collection: 'Religiosos',
   category: 'Amigurumis',
@@ -67,7 +69,7 @@ export const campaign = {
 
 // Productos que aparecen en la portada, en este orden. En escritorio se muestran los tres primeros.
 // Conviene elegir fotos propias, no fotos de referencia.
-export const heroProductIds = ['ilu-026', 'ilu-032', 'ilu-030', 'ilu-037'];
+export const heroProductIds = ['ilu-026', 'ilu-071', 'ilu-072', 'ilu-073', 'ilu-032'];
 
 export const categories = ['Todos', 'Amigurumis', 'Arreglos florales', 'Peluches', 'A tu gusto'];
 
@@ -125,11 +127,12 @@ export const promotions = promotionsData;
 
 // Fechas especiales: se muestran las próximas según el día en que se abre la página.
 // month = mes (1-12). Usa "day" para una fecha fija o "nthWeekday" para "el n-ésimo domingo" (weekday 0 = domingo).
+// Por ahora solo Navidad. Para volver a mostrar otra fecha, quítale las dos barras del inicio.
 export const specialDates = [
-  { id: 'san-valentin', name: 'San Valentín', rule: { month: 2, day: 14 } },
-  { id: 'dia-mujer', name: 'Día de la Mujer', rule: { month: 3, day: 8 } },
-  { id: 'dia-madre', name: 'Día de la Madre', rule: { month: 5, nthWeekday: { n: 2, weekday: 0 } } },
-  { id: 'dia-padre', name: 'Día del Padre', rule: { month: 6, nthWeekday: { n: 3, weekday: 0 } } },
+  // { id: 'san-valentin', name: 'San Valentín', rule: { month: 2, day: 14 } },
+  // { id: 'dia-mujer', name: 'Día de la Mujer', rule: { month: 3, day: 8 } },
+  // { id: 'dia-madre', name: 'Día de la Madre', rule: { month: 5, nthWeekday: { n: 2, weekday: 0 } } },
+  // { id: 'dia-padre', name: 'Día del Padre', rule: { month: 6, nthWeekday: { n: 3, weekday: 0 } } },
   { id: 'navidad', name: 'Navidad', rule: { month: 12, day: 25 } },
 ];
 

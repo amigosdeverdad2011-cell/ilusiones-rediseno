@@ -40,3 +40,10 @@
 @media (min-width: 960px) {
   .whatsapp-fab { display: none; }
 }
+
+/* Onda suave alrededor del botón flotante para que se note sin molestar */
+.whatsapp-fab::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa);
+  animation: fab-ring 2.8s var(--ease-out) infinite; pointer-events: none;
+}
+@keyframes fab-ring { 0% { opacity: 0.7; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.6); } }

@@ -2,9 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Campaign from './components/Campaign.jsx';
+import CampaignPopup from './components/CampaignPopup.jsx';
 import Catalog from './components/Catalog.jsx';
 import Promotions from './components/Promotions.jsx';
-import SpecialDates from './components/SpecialDates.jsx';
 import HowToOrder from './components/HowToOrder.jsx';
 import SendGift from './components/SendGift.jsx';
 import Story from './components/Story.jsx';
@@ -23,7 +23,7 @@ function pickHeroProducts(products) {
   const withImage = products.filter((p) => p.visible !== false && p.image);
   const chosen = heroProductIds.map((id) => withImage.find((p) => p.id === id)).filter(Boolean);
   const extra = withImage.filter((p) => p.featured && !chosen.includes(p));
-  return [...chosen, ...extra].slice(0, 4);
+  return [...chosen, ...extra].slice(0, 5);
 }
 
 export default function App() {
@@ -66,14 +66,14 @@ export default function App() {
         <Campaign products={products} onShowCollection={catalog.showCollection} />
         <Catalog catalog={catalog} />
         <Promotions items={promotions} />
-        <SendGift />
-        <SpecialDates />
-        <HowToOrder />
         <Story />
         <Visit />
+        <SendGift />
+        <HowToOrder />
       </main>
       <Footer />
       <WhatsAppFab />
+      {!adminOpen && <CampaignPopup products={products} onShowCollection={catalog.showCollection} />}
       {/* El editor no tiene contraseña: solo existe con npm run dev, nunca en la página publicada. */}
       {import.meta.env.DEV && adminOpen && <AdminPanel products={products} onChange={updateProducts} onReset={resetProducts} onClose={closeAdmin} />}
     </>

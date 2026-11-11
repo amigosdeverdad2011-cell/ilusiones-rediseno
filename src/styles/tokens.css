@@ -46,7 +46,7 @@
   --radius-l: 28px;
   --gutter: 20px;
   --maxw: 1200px;
-  --header-h: 64px;
+  --header-h: 76px;
   --section-y: 72px;
 }
 
@@ -55,5 +55,5 @@
 }
 
 @media (min-width: 960px) {
-  :root { --header-h: 76px; --section-y: 128px; }
+  :root { --header-h: 96px; --section-y: 128px; }
 }

@@ -10,8 +10,8 @@ export default function Visit() {
     <section className="section visit-section reveal" id="ubicacion" aria-labelledby="ubicacion-title">
       <div className="container visit-inner">
         <div className="visit-copy">
-          <p className="kicker">Florería en Cajamarca</p>
           <h2 id="ubicacion-title" className="section-title">Visítanos <em>al costado de Mega Plaza</em></h2>
+          <p className="section-lead">Nuestra florería y tienda de regalos en Cajamarca te espera con todo lo que ves en el catálogo.</p>
 
           <ul className="visit-facts">
             <li>

@@ -13,10 +13,9 @@ export default function Hero({ items, minPrice }) {
     <section className="hero" id="inicio" aria-labelledby="hero-title">
       <div className="container hero-inner">
         <div className="hero-copy">
-          <p className="kicker">Amigurumis personalizados en Cajamarca</p>
-          <h1 id="hero-title">Detalles que <em>enamoran</em></h1>
+          <h1 id="hero-title">Detalles que enamoran</h1>
           <p className="hero-lead">
-            Amigurumis tejidos a mano por la abuela, arreglos florales y combos con peluche. {business.madeIn}.
+            Amigurumis personalizados en Cajamarca, tejidos a mano por la abuela. También arreglos florales y combos con peluche.
           </p>
         </div>
 
