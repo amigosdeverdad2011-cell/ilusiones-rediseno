@@ -24,6 +24,15 @@ export function upcomingDates(list, from = new Date(), limit = 4) {
     .slice(0, limit);
 }
 
+// true si "from" cae entre dos fechas { month, day } del año (ambas incluidas). Admite rangos que cruzan el año nuevo.
+export function isWithinYearRange(start, end, from = new Date()) {
+  const key = (month, day) => month * 100 + day;
+  const today = key(from.getMonth() + 1, from.getDate());
+  const a = key(start.month, start.day);
+  const b = key(end.month, end.day);
+  return a <= b ? today >= a && today <= b : today >= a || today <= b;
+}
+
 export function formatDay(date) {
   return new Intl.DateTimeFormat('es-PE', { day: 'numeric', month: 'long' }).format(date);
 }

@@ -1,19 +1,20 @@
 /* ============================================================
    Pie de página y botón flotante de WhatsApp
    ============================================================ */
-.footer { background: var(--night); color: #f9ebe8; padding-top: 64px; }
+.footer { background: var(--night); color: var(--night-heading); padding-top: 64px; }
 .footer-grid { display: grid; gap: 40px; padding-bottom: 48px; }
 .footer-logo { display: inline-block; padding: 14px; border-radius: 20px; background: #fffdf8; }
 .footer-logo img { display: block; width: 160px; height: auto; }
-.footer-brand p { max-width: 32ch; margin-top: 16px; color: #e6d6d6; }
+.footer-brand p { max-width: 32ch; margin-top: 16px; color: var(--night-text); }
 .footer-col h2 { margin-bottom: 14px; font-family: var(--font-sans); font-size: 1rem; font-weight: 700; letter-spacing: 0; color: #fff; }
-.footer-col p { max-width: 34ch; color: #e6d6d6; }
+.footer-col p { max-width: 34ch; color: var(--night-text); }
+.footer-hours { margin-top: 10px; }
 .footer-col p svg { display: inline; margin-right: 6px; vertical-align: -3px; }
-.footer-link { margin-top: 10px; min-height: 44px; color: #f0b9c6; }
+.footer-link { margin-top: 10px; min-height: 44px; color: var(--night-link); }
 .footer-phones { display: flex; flex-wrap: wrap; gap: 10px; }
 .footer-bottom {
   padding-block: 22px calc(22px + env(safe-area-inset-bottom));
-  border-top: 1px solid #5a4d50; font-size: 0.875rem; color: #d7c4c6;
+  border-top: 1px solid var(--night-line); font-size: 0.875rem; color: var(--night-soft);
 }
 @media (min-width: 900px) {
   .footer { padding-top: 88px; }

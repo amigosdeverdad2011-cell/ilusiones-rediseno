@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { collectionOrder } from '../data/config.js';
 
 export const priceRanges = [
   { value: 'all', label: 'Todos los precios', short: 'Todos', test: () => true },
@@ -14,6 +15,8 @@ export default function useCatalog(products) {
   const [budget, setBudget] = useState('all');
   const [sort, setSort] = useState('original');
   const [query, setQuery] = useState('');
+  // Colección elegida desde un banner (por ejemplo Religiosos en Navidad). null = todas.
+  const [collection, setCollection] = useState(null);
 
   const published = useMemo(() => products.filter((p) => p.visible !== false), [products]);
 
@@ -31,6 +34,7 @@ export default function useCatalog(products) {
     const result = published.filter(
       (p) =>
         (category === 'Todos' || p.category === category) &&
+        (!collection || p.collection === collection) &&
         range.test(Number(p.price)) &&
         (!text || `${p.name} ${p.description || ''}`.toLocaleLowerCase('es').includes(text)),
     );
@@ -38,7 +42,7 @@ export default function useCatalog(products) {
     if (sort === 'price-desc') result.sort((a, b) => Number(b.price) - Number(a.price));
     if (sort === 'az') result.sort((a, b) => a.name.localeCompare(b.name, 'es'));
     return result;
-  }, [published, category, budget, sort, query]);
+  }, [published, category, collection, budget, sort, query]);
 
   // Con el orden original y sin búsqueda, los productos se agrupan por colección.
   const grouped = useMemo(() => {
@@ -49,7 +53,11 @@ export default function useCatalog(products) {
       if (!groups.has(name)) groups.set(name, []);
       groups.get(name).push(p);
     });
-    return [...groups].map(([name, items]) => ({ name, items }));
+    const rank = (name) => {
+      const index = collectionOrder.indexOf(name);
+      return index === -1 ? collectionOrder.length : index;
+    };
+    return [...groups].map(([name, items]) => ({ name, items })).sort((a, b) => rank(a.name) - rank(b.name));
   }, [visible, sort, query]);
 
   const minPrice = useMemo(() => {
@@ -57,17 +65,33 @@ export default function useCatalog(products) {
     return prices.length ? Math.min(...prices) : null;
   }, [published]);
 
-  const hasFilters = category !== 'Todos' || budget !== 'all' || query.trim() !== '';
+  const hasFilters = category !== 'Todos' || collection !== null || budget !== 'all' || query.trim() !== '';
+
+  // Muestra solo una colección (desde un banner): limpia los demás filtros para que se vea completa.
+  function showCollection(name, categoryName = 'Todos') {
+    setCategory(categoryName);
+    setCollection(name);
+    setBudget('all');
+    setQuery('');
+    setSort('original');
+  }
+
+  function chooseCategory(name) {
+    setCategory(name);
+    setCollection(null);
+  }
 
   function reset() {
     setCategory('Todos');
+    setCollection(null);
     setBudget('all');
     setQuery('');
     setSort('original');
   }
 
   return {
-    category, setCategory, budget, setBudget, sort, setSort, query, setQuery,
+    category, setCategory: chooseCategory, collection, setCollection, showCollection,
+    budget, setBudget, sort, setSort, query, setQuery,
     published, categoryTotals, visible, grouped, minPrice, hasFilters, reset,
   };
 }

@@ -13,7 +13,12 @@
   --rose-soft: #efd2d8;
   --gold-pale: #f4e8d0;    /* secciones doradas */
   --line: #ecdfd6;         /* bordes suaves */
-  --night: #382e30;        /* pie de página */
+  --night: #382e30;        /* pie de página y banner de temporada */
+  --night-heading: #f9ebe8;
+  --night-text: #e6d6d6;
+  --night-soft: #d7c4c6;
+  --night-link: #f0b9c6;
+  --night-line: #5a4d50;
 
   /* Texto */
   --ink: #3a2f32;
@@ -25,6 +30,7 @@
   --rose-deep: #8f3f56;
   --gold: #c9a25f;
   --gold-deep: #8a6a2f;
+  --gold-brand: #94752f;   /* nombre "Ilusiones" de la cabecera */
   --wa: #2f9a68;
 
   /* Tipografía */

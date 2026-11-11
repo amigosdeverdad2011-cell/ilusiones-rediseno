@@ -65,3 +65,62 @@
   .story-inner { grid-template-columns: 0.85fr 1.15fr; gap: 88px; }
   .story-photo { margin-inline: 0; }
 }
+
+/* Frase corta sobre los títulos (también ayuda a Google: "Florería en Cajamarca", etc.) */
+.kicker { margin-bottom: 10px; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em; color: var(--gold-deep); }
+.chip-filter { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; font-size: 0.85rem; }
+
+/* Banner de temporada (Navidad): banda oscura para que las piezas tejidas resalten */
+.campaign { background: var(--night); color: var(--night-heading); }
+.campaign-inner { display: grid; gap: 28px; padding-block: 44px; }
+.campaign-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em; color: var(--gold); }
+.campaign .section-title { color: #fff; }
+.campaign .section-title em { color: var(--night-link); }
+.campaign-text { margin-top: 14px; max-width: 44ch; font-size: 1.0625rem; color: var(--night-text); }
+.campaign-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.btn-ghost-light { border-color: var(--night-line); background: transparent; color: #fff; }
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost-light:hover { border-color: var(--night-link); }
+}
+.campaign-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.campaign-photos li { aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-m); background: var(--night-line); }
+.campaign-photos img, .campaign-photos .photo-fallback { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .campaign-inner { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 64px; padding-block: 72px; }
+  .campaign-photos { gap: 16px; }
+  .campaign-photos li:nth-child(2) { transform: translateY(-20px); }
+}
+
+/* Envía un regalo a Cajamarca */
+.gift-section { background: var(--paper); }
+.gift-inner { display: grid; gap: 40px; }
+.gift-facts { display: grid; gap: 18px; margin: 28px 0; }
+.gift-facts dt { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--rose-deep); }
+.gift-facts dd { margin: 4px 0 0; max-width: 46ch; color: var(--ink-soft); }
+.gift-payments { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.gift-payments li { padding: 8px 14px; border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--cream); font-size: 0.9375rem; }
+.gift-payments strong { margin-right: 4px; color: var(--ink); }
+.gift-steps { display: grid; gap: 14px; }
+.gift-step { display: flex; gap: 16px; padding: 20px; border-radius: var(--radius-m); background: var(--rose-pale); }
+.gift-step-icon { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--paper); color: var(--rose); }
+.gift-step h3 { font-size: 1.25rem; }
+.gift-step p { margin-top: 4px; color: var(--ink-soft); }
+@media (min-width: 900px) {
+  .gift-inner { grid-template-columns: 1.05fr 0.95fr; gap: 72px; align-items: center; }
+}
+
+/* Ubicación */
+.visit-section { background: var(--cream); }
+.visit-inner { display: grid; gap: 32px; }
+.visit-facts { display: grid; gap: 16px; margin-top: 24px; }
+.visit-facts li { display: flex; gap: 12px; color: var(--ink-soft); }
+.visit-facts svg { flex: none; margin-top: 3px; color: var(--rose); }
+.visit-facts strong { color: var(--ink); }
+.visit-hours { display: block; }
+.visit-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.visit-map { overflow: hidden; border-radius: var(--radius-l); background: var(--cream-deep); aspect-ratio: 4 / 3; }
+.visit-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+@media (min-width: 900px) {
+  .visit-inner { grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: center; }
+}
+.order-delivery { min-height: 44px; text-decoration: underline; text-decoration-color: var(--rose-soft); text-underline-offset: 4px; }

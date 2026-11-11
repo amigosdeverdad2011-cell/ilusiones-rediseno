@@ -153,3 +153,14 @@ html:has(.product-sheet[open]) { overflow: hidden; }
 }
 .empty-state h3 { font-size: 1.5rem; color: var(--ink); }
 .empty-state p { max-width: 44ch; margin-bottom: 8px; color: var(--ink-soft); }
+
+/* Tarjeta "Pídelo personalizado": ocupa el lugar de un producto en la grilla */
+.custom-card {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px;
+  padding: 20px 16px; border: 1.5px dashed var(--rose-soft); border-radius: var(--radius-m);
+  background: var(--rose-pale); color: var(--rose);
+}
+.custom-card h3 { font-size: 1.35rem; color: var(--ink); }
+.custom-card p { font-size: 0.9375rem; color: var(--ink-soft); }
+.custom-card-action { margin-top: 6px; white-space: normal; text-align: center; line-height: 1.2; }
+@media (min-width: 640px) { .custom-card { padding: 28px 24px; } .custom-card h3 { font-size: 1.6rem; } }

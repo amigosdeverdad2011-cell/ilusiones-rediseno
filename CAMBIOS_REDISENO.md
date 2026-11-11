@@ -46,3 +46,8 @@
 - Fotos de esos productos: cinco tienen marcas de otras cuentas y están marcadas como foto de referencia.
 - Si existen promociones reales (para llenar `promotions`).
 - Redes sociales y horario: no hay datos verificados, por eso no aparecen.
+
+## Fase 2 — 10 de noviembre de 2026
+- Nuevos en Personajes: `ilu-071` Espadachín tejido con haori verde (S/ 85), `ilu-072` Ninja tejido con capa de nubes rojas (S/ 85) y `ilu-073` Muñeco rosado tejido con capa morada (S/ 90). Sus fotos son de referencia (no son piezas propias) y los precios los propuso Claude a pedido del negocio, en línea con los demás personajes (S/ 65–110). Conviene confirmarlos.
+- La web ya no muestra la etiqueta "Foto de referencia": el negocio considera que el cliente lo sabe. El dato `referencePhoto` se conserva en `products.json` para control interno.
+- No se agregaron dos fotos de personajes porque llevan la marca de otras tiendas (NayeraCrochet by Grace y @azulecroche).

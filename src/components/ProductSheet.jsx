@@ -32,9 +32,6 @@ export default function ProductSheet({ product, onClose }) {
         <div className="sheet-body">
           <h3 id="ficha-titulo">{product.name}</h3>
           {product.description && <p className="sheet-description">{product.description}</p>}
-          {product.referencePhoto && (
-            <p className="sheet-note">Foto de referencia: el detalle final puede variar.</p>
-          )}
           <p className="sheet-price">{formatPrice(product.price)}</p>
           <a className="btn btn-primary sheet-action" href={getWhatsAppLink(product.name)} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={18} aria-hidden="true" /> Pedir por WhatsApp

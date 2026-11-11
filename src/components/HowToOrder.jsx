@@ -26,7 +26,7 @@ export default function HowToOrder() {
         </ol>
         <div className="order-foot">
           {business.deliveryOffered && (
-            <p className="order-delivery"><Truck size={22} strokeWidth={1.6} aria-hidden="true" /> También hacemos delivery.</p>
+            <a className="order-delivery" href="#enviar"><Truck size={22} strokeWidth={1.6} aria-hidden="true" /> También hacemos delivery: mira las zonas</a>
           )}
           <a className="btn btn-primary" href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
             Coordinar mi pedido <ArrowUpRight size={18} aria-hidden="true" />

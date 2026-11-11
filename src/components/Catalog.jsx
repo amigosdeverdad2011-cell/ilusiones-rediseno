@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Gift, Search, SlidersHorizontal, X } from 'lucide-react';
+import CustomOrderCard from './CustomOrderCard.jsx';
 import ProductCard from './ProductCard.jsx';
 import ProductSheet from './ProductSheet.jsx';
-import { categories, categoryInfo, collectionNotes } from '../data/config.js';
+import { categories, categoryInfo, collectionNotes, customOrder } from '../data/config.js';
 import { priceRanges } from '../lib/useCatalog.js';
 import { getWhatsAppLink } from '../lib/links.js';
 
 export default function Catalog({ catalog }) {
-  const { category, setCategory, budget, setBudget, sort, setSort, query, setQuery, visible, grouped, categoryTotals, hasFilters, reset } = catalog;
+  const { category, setCategory, collection, setCollection, budget, setBudget, sort, setSort, query, setQuery, visible, grouped, categoryTotals, hasFilters, reset } = catalog;
   const categoryEmpty = category !== 'Todos' && !(categoryTotals[category] > 0);
   const info = categoryInfo[category] || {};
   // En celular los filtros van plegados para que los productos aparezcan antes.
@@ -68,8 +69,10 @@ export default function Catalog({ catalog }) {
       </div>
     );
   } else if (grouped) {
+    // La tarjeta de personalizados va una sola vez, en el primer grupo que tenga amigurumis.
+    const customGroup = customOrder && grouped.find((group) => group.items.some((p) => p.category === customOrder.category));
     results = grouped.map((group, index) => {
-      const isOpen = expanded.includes(group.name) || group.items.length <= previewCount + 2;
+      const isOpen = collection !== null || expanded.includes(group.name) || group.items.length <= previewCount + 2;
       const shown = isOpen ? group.items : group.items.slice(0, previewCount);
       return (
         <section className="collection" key={group.name} aria-labelledby={`coleccion-${index}`}>
@@ -79,6 +82,7 @@ export default function Catalog({ catalog }) {
           </header>
           <div className="product-grid">
             {shown.map((product) => <ProductCard key={product.id || product.name} product={product} onOpen={openProduct} />)}
+            {group === customGroup && <CustomOrderCard />}
           </div>
           {!isOpen && (
             <button type="button" className="btn btn-ghost show-more" onClick={() => setExpanded([...expanded, group.name])}>
@@ -181,6 +185,11 @@ export default function Catalog({ catalog }) {
             <p className="result-count" aria-live="polite">
               {visible.length} {visible.length === 1 ? 'producto' : 'productos'}
             </p>
+            {collection && (
+              <button type="button" className="chip chip-filter is-active" onClick={() => setCollection(null)} aria-label={`Quitar el filtro ${collection}`}>
+                {collection} <X size={15} aria-hidden="true" />
+              </button>
+            )}
             {hasFilters && (
               <button type="button" className="link-button" onClick={reset}>
                 <X size={15} aria-hidden="true" /> Limpiar filtros

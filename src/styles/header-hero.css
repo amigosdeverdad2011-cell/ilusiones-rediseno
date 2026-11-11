@@ -10,7 +10,7 @@
 .brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; min-height: 44px; }
 .brand-mark { width: 44px; height: 44px; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-name { font-family: var(--font-serif); font-weight: 600; font-size: 1.65rem; letter-spacing: -0.02em; color: #94752f; }
+.brand-name { font-family: var(--font-serif); font-weight: 600; font-size: 1.65rem; letter-spacing: -0.02em; color: var(--gold-brand); }
 .brand-sub { margin-top: 5px; font-size: 0.75rem; color: var(--muted); }
 
 .header-actions { display: flex; align-items: center; gap: 8px; }
@@ -43,7 +43,11 @@
     display: flex; position: static; flex-direction: row; gap: 28px;
     padding: 0; background: transparent; box-shadow: none;
   }
-  .site-nav a { min-height: 44px; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); }
+  .site-nav a { min-height: 44px; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+}
+@media (min-width: 960px) and (max-width: 1139px) {
+  .site-nav { gap: 18px; }
+  .header-cta .only-wide { display: none; }
 }
 
 /* Portada: en celular los productos aparecen en la primera pantalla */
@@ -83,6 +87,7 @@
 @media (min-width: 960px) { .hero-actions .btn-ghost { display: inline-flex; } }
 .hero-facts { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 16px; font-size: 0.875rem; color: var(--ink-soft); }
 .hero-facts li { display: flex; align-items: center; gap: 7px; }
+.hero-facts a { text-decoration: underline; text-decoration-color: var(--rose-soft); text-underline-offset: 4px; }
 .hero-facts li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
 
 @media (hover: hover) and (pointer: fine) {

@@ -3,10 +3,15 @@ import lightPhotos from '../data/fotos-livianas.generated.json';
 
 // Enlace de WhatsApp con el mensaje ya escrito. numberIndex 0 = número principal, 1 = segundo número.
 export function getWhatsAppLink(productName = '', numberIndex = 0) {
-  const target = business.whatsappNumbers[numberIndex] || business.whatsappNumbers[0];
   const message = productName
     ? `¡Hola, Ilusiones! 🌸 Quisiera consultar por: ${productName}. ¿Está disponible?`
     : '¡Hola, Ilusiones! 🌸 Quisiera consultar por un detalle o hacer un pedido.';
+  return getWhatsAppMessageLink(message, numberIndex);
+}
+
+// Igual que getWhatsAppLink, pero con un mensaje completo escrito a mano (campañas, envíos).
+export function getWhatsAppMessageLink(message, numberIndex = 0) {
+  const target = business.whatsappNumbers[numberIndex] || business.whatsappNumbers[0];
   return `https://wa.me/${target.number}?text=${encodeURIComponent(message)}`;
 }
 

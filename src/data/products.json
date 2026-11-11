@@ -446,7 +446,7 @@
     "category": "Amigurumis",
     "collection": "Religiosos",
     "image": "/Imagenes Catalogo/amigurumis/ilu-042-sagrada-familia-tejida-a-color.jpg",
-    "referencePhoto": false,
+    "referencePhoto": true,
     "featured": false,
     "visible": true,
     "id": "ilu-042"
@@ -758,6 +758,39 @@
     "referencePhoto": false,
     "featured": false,
     "visible": true
+  },
+  {
+    "name": "Espadachín tejido con haori verde",
+    "price": 85,
+    "category": "Amigurumis",
+    "collection": "Personajes",
+    "image": "/Imagenes Catalogo/amigurumis/ilu-071-espadachin-tejido-con-haori-verde.webp",
+    "referencePhoto": true,
+    "featured": false,
+    "visible": true,
+    "id": "ilu-071"
+  },
+  {
+    "name": "Ninja tejido con capa de nubes rojas",
+    "price": 85,
+    "category": "Amigurumis",
+    "collection": "Personajes",
+    "image": "/Imagenes Catalogo/amigurumis/ilu-072-ninja-tejido-con-capa-de-nubes-rojas.webp",
+    "referencePhoto": true,
+    "featured": false,
+    "visible": true,
+    "id": "ilu-072"
+  },
+  {
+    "name": "Muñeco rosado tejido con capa morada",
+    "price": 90,
+    "category": "Amigurumis",
+    "collection": "Personajes",
+    "image": "/Imagenes Catalogo/amigurumis/ilu-073-muneco-rosado-tejido-con-capa-morada.webp",
+    "referencePhoto": true,
+    "featured": false,
+    "visible": true,
+    "id": "ilu-073"
   },
   {
     "name": "Detalle de cumpleaños con osito",

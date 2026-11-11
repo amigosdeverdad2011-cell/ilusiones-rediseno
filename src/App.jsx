@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
+import Campaign from './components/Campaign.jsx';
 import Catalog from './components/Catalog.jsx';
 import Promotions from './components/Promotions.jsx';
 import SpecialDates from './components/SpecialDates.jsx';
 import HowToOrder from './components/HowToOrder.jsx';
+import SendGift from './components/SendGift.jsx';
 import Story from './components/Story.jsx';
+import Visit from './components/Visit.jsx';
 import Footer from './components/Footer.jsx';
 import WhatsAppFab from './components/WhatsAppFab.jsx';
 import AdminPanel from './components/AdminPanel.jsx';
@@ -60,11 +63,14 @@ export default function App() {
       <Header hasPromotions={promotions.length > 0} />
       <main id="contenido">
         <Hero items={hero} minPrice={catalog.minPrice} />
+        <Campaign products={products} onShowCollection={catalog.showCollection} />
         <Catalog catalog={catalog} />
         <Promotions items={promotions} />
+        <SendGift />
         <SpecialDates />
         <HowToOrder />
         <Story />
+        <Visit />
       </main>
       <Footer />
       <WhatsAppFab />
