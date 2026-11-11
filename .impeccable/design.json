@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T00:00:00-05:00",
+  "title": "Design System: Regalos y Peluches Ilusiones",
+  "extensions": {
+    "colorMeta": {
+      "rosa-antiguo": { "role": "primary", "displayName": "Rosa antiguo", "tonalRamp": ["#3d1a24", "#5e2738", "#8f3f56", "#a94e66", "#c97f92", "#e3b3bf", "#efd2d8", "#f7e6e8"] },
+      "dorado": { "role": "secondary", "displayName": "Dorado", "tonalRamp": ["#3a2c12", "#5e4720", "#8a6a2f", "#94752f", "#c9a25f", "#dcc08d", "#ecdbb8", "#f4e8d0"] },
+      "crema": { "role": "neutral", "displayName": "Crema", "tonalRamp": ["#3a2f32", "#5b4f52", "#6f6366", "#a89d97", "#ecdfd6", "#f4ebdd", "#fbf6ee", "#fffdf9"] },
+      "noche": { "role": "neutral", "displayName": "Noche", "tonalRamp": ["#1d1719", "#2a2224", "#382e30", "#5a4d50", "#8a7b7e", "#d7c4c6", "#e6d6d6", "#f9ebe8"] },
+      "verde-whatsapp": { "role": "accent", "displayName": "Verde WhatsApp" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Solo el titular de la portada." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección, con una palabra en cursiva rosa." },
+      "title": { "displayName": "Title", "purpose": "Títulos de colección del catálogo." },
+      "brand": { "displayName": "Marca", "purpose": "La palabra Ilusiones en la cabecera, en dorado de marca." },
+      "body": { "displayName": "Body", "purpose": "Texto general." },
+      "product-name": { "displayName": "Nombre de producto", "purpose": "Nombre en cada tarjeta del catálogo." },
+      "price": { "displayName": "Precio", "purpose": "Precio en soles, en rosa antiguo profundo." },
+      "label": { "displayName": "Label", "purpose": "Botones, chips y menú." }
+    },
+    "shadows": [
+      { "name": "linea-cabecera", "value": "0 1px 0 rgba(58, 47, 50, 0.08)", "purpose": "Separa la cabecera fija del contenido." },
+      { "name": "menu-desplegado", "value": "0 18px 30px rgba(58, 47, 50, 0.12)", "purpose": "Menú del celular sobre la página." },
+      { "name": "boton-flotante", "value": "0 10px 28px rgba(47, 95, 79, 0.35)", "purpose": "Solo el botón flotante de WhatsApp." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Curva de todas las transiciones (--ease-out)." },
+      { "name": "presion", "value": "160ms", "purpose": "Botones y chips al tocar (escala 0.97) y cambios de color." },
+      { "name": "foto-y-entrada", "value": "500ms", "purpose": "Zoom de fotos con mouse y entrada de secciones." },
+      { "name": "portada", "value": "600ms", "purpose": "Subida escalonada de la portada (0, 70 y 140 ms)." },
+      { "name": "hoja", "value": "320ms cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Ficha ampliada que sube en el celular." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "480px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "720px" },
+      { "name": "lg", "value": "900px" },
+      { "name": "nav", "value": "960px" },
+      { "name": "xl", "value": "1000px" },
+      { "name": "wide", "value": "1240px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal hacia el catálogo o WhatsApp.",
+      "html": "<button class=\"ds-btn-primary\">Ver el catálogo</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border: 1.5px solid transparent; border-radius: 999px; background: #a94e66; color: #fff; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; font-weight: 600; line-height: 1; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-btn-primary:hover { background: #8f3f56; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón Pedir (suave)",
+      "kind": "button",
+      "refersTo": "button-soft",
+      "description": "Botón Pedir de cada tarjeta de producto.",
+      "html": "<button class=\"ds-btn-soft\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/></svg>Pedir</button>",
+      "css": ".ds-btn-soft { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 1.5px solid transparent; border-radius: 999px; background: #f7e6e8; color: #8f3f56; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms; } .ds-btn-soft:hover { background: #a94e66; color: #fff; } .ds-btn-soft:active { transform: scale(0.97); } .ds-btn-soft:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón fantasma",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria junto al botón principal.",
+      "html": "<button class=\"ds-btn-ghost\">WhatsApp</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border: 1.5px solid #efd2d8; border-radius: 999px; background: transparent; color: #8f3f56; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background-color 160ms, border-color 160ms; } .ds-btn-ghost:hover { background: #fffdf9; border-color: #a94e66; } .ds-btn-ghost:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chips de categoría",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Filtro de categoría o presupuesto; el activo va en rosa.",
+      "html": "<div class=\"ds-chip-row\"><button class=\"ds-chip ds-chip-active\">Todos<span class=\"ds-chip-count\">70</span></button><button class=\"ds-chip\">Amigurumis<span class=\"ds-chip-count\">44</span></button><button class=\"ds-chip\">Arreglos florales<span class=\"ds-chip-count\">25</span></button></div>",
+      "css": ".ds-chip-row { display: flex; gap: 8px; flex-wrap: wrap; } .ds-chip { min-height: 44px; padding: 0 18px; border: 1px solid #ecdfd6; border-radius: 999px; background: #fffdf9; color: #5b4f52; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background-color 160ms, color 160ms; } .ds-chip:hover { background: #f7e6e8; color: #8f3f56; } .ds-chip-active, .ds-chip-active:hover { border-color: #a94e66; background: #a94e66; color: #fff; } .ds-chip-count { margin-left: 6px; font-weight: 500; opacity: 0.7; } .ds-chip:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    },
+    {
+      "name": "Buscador",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Búsqueda de productos del catálogo.",
+      "html": "<label class=\"ds-search\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Buscar un detalle…\" aria-label=\"Buscar productos\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border: 1px solid #ecdfd6; border-radius: 14px; background: #fffdf9; color: #a94e66; } .ds-search input { flex: 1; min-width: 0; min-height: 46px; border: 0; outline: 0; background: transparent; color: #3a2f32; font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; } .ds-search input::placeholder { color: #6f6366; } .ds-search:focus-within { outline: 3px solid #a94e66; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tarjeta de producto",
+      "kind": "card",
+      "refersTo": "product-card-media",
+      "description": "Foto 4:5, nombre, precio y botón Pedir; sin sombra ni borde.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-media\"><span class=\"ds-badge\">Destacado</span></div><h3 class=\"ds-card-title\">Osito tejido con bufanda lila</h3><div class=\"ds-card-foot\"><p class=\"ds-card-price\">S/ 55</p><button class=\"ds-card-btn\">Pedir</button></div></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; width: 220px; font-family: 'DM Sans', system-ui, sans-serif; } .ds-card-media { position: relative; aspect-ratio: 4 / 5; border-radius: 18px; background: #f7e6e8; } .ds-badge { position: absolute; top: 8px; left: 8px; padding: 4px 9px; border-radius: 999px; background: rgba(255, 253, 249, 0.94); color: #8a6a2f; font-size: 0.75rem; font-weight: 600; } .ds-card-title { margin: 10px 0 4px; font-size: 0.9375rem; font-weight: 600; line-height: 1.3; color: #3a2f32; } .ds-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; } .ds-card-price { margin: 0; font-size: 1.125rem; font-weight: 700; color: #8f3f56; } .ds-card-btn { min-height: 44px; padding: 0 12px; border: 0; border-radius: 999px; background: #f7e6e8; color: #8f3f56; font: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background-color 160ms, color 160ms; } .ds-card-btn:hover { background: #a94e66; color: #fff; } .ds-card-btn:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    },
+    {
+      "name": "Foto en arco",
+      "kind": "custom",
+      "refersTo": "hero-photo",
+      "description": "Marco en arco reservado para la portada y la historia.",
+      "html": "<div class=\"ds-arch\"></div>",
+      "css": ".ds-arch { width: 220px; aspect-ratio: 4 / 5; border-radius: 999px 999px 28px 28px; background: #f7e6e8; }"
+    },
+    {
+      "name": "Botón flotante de WhatsApp",
+      "kind": "custom",
+      "refersTo": "whatsapp-fab",
+      "description": "Acceso a WhatsApp en celular; se oculta sobre la grilla.",
+      "html": "<a class=\"ds-fab\" href=\"#\" aria-label=\"Pedir por WhatsApp\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/></svg></a>",
+      "css": ".ds-fab { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: #2f9a68; color: #fff; box-shadow: 0 10px 28px rgba(47, 95, 79, 0.35); transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-fab:hover { transform: scale(1.06); } .ds-fab:active { transform: scale(0.94); } .ds-fab:focus-visible { outline: 3px solid #a94e66; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El taller de la abuela",
+    "overview": "Ilusiones se siente como una tienda pequeña hecha a mano en Cajamarca: papel crema de fondo, un rosa antiguo que aparece solo donde hay que actuar, y un dorado fino que firma los detalles. Es una boutique de regalos familiar y artesanal: elegante, romántica, cálida, delicada, moderna y profesional, nunca una plantilla de e-commerce. Las fotos reales de los productos y de la familia son las protagonistas; el diseño las enmarca con calma.\n\nLa densidad es tranquila. Las secciones respiran (de 72 px en celular a 128 px en escritorio). Los títulos van en una serif romántica, y todo lo que se lee o se toca va en una sans limpia y grande. El color de fondo cambia por bloques (crema, rosa pálido, dorado pálido y la noche del pie de página) en lugar de usar sombras. El movimiento es corto y suave: los botones se hunden al tocarlos, las fotos crecen un poco al pasar el mouse y las secciones suben despacio al aparecer. Todo se apaga con \"reducir movimiento\".",
+    "keyCharacteristics": [
+      "Base crema y papel; rosa antiguo solo en acciones, precios y palabras en cursiva.",
+      "Pareja tipográfica Playfair Display (titulares) y DM Sans (lectura y botones).",
+      "Fotos en marco de arco: el sello visual de la portada y de la historia.",
+      "Plano por defecto: la profundidad la dan los fondos por bloque, no las sombras.",
+      "Botones en píldora de 44–48 px de alto, cómodos para el dedo y para personas mayores."
+    ],
+    "rules": [
+      { "name": "The Handmade Rule", "body": "Lo tejido a mano siempre se ve y se nombra: si una pieza la hizo la abuela, el diseño lo dice.", "section": "overview" },
+      { "name": "The WhatsApp Rule", "body": "Cada producto y cada sección terminan en una acción clara hacia WhatsApp.", "section": "overview" },
+      { "name": "The Calm Base Rule", "body": "La base es crema/blanco; los colores de marca son acentos, no fondos dominantes.", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "El rosa antiguo sólido es la única señal de \"toca aquí\". Si algo no es una acción, un precio o una palabra destacada, no va en rosa sólido.", "section": "colors" },
+      { "name": "The Italic Accent Rule", "body": "Cada titular puede llevar una sola palabra o frase en cursiva rosa (<em>), nunca más de una por título.", "section": "typography" },
+      { "name": "The Readable Floor Rule", "body": "El texto que se lee o se toca nunca baja de 0.875rem, y los campos de texto usan 16 px para que el iPhone no haga zoom.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Nada tiene sombra en reposo salvo lo que flota sobre la página (cabecera, menú y botón de WhatsApp).", "section": "elevation" },
+      { "name": "The Arch Rule", "body": "El arco se reserva para las fotos protagonistas (portada e historia). Las fotos del catálogo usan el rectángulo de 18 px para que la grilla se lea ordenada.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do usar las fotos reales del catálogo y comprimirlas para que carguen rápido. El proyecto ya genera copias livianas cuando una foto pesa más de 300 KB o mide más de 1400 px.",
+      "Do mostrar \"Hechos con cariño en Cajamarca\" y la historia familiar, con la foto de los abuelos en arco.",
+      "Do destacar los amigurumis como producto estrella y la opción de personalizados.",
+      "Do mostrar \"Consultar precio\" cuando un precio no esté confirmado. formatPrice ya lo hace cuando el precio está vacío o es 0.",
+      "Do tomar los colores de src/styles/tokens.css. Los que hoy están escritos a mano (dorado de marca #94752f y los tonos del pie de página) deberían pasar a tokens antes de agregar más.",
+      "Do mantener los objetivos táctiles de 44 px o más, y los efectos de hover solo dentro de @media (hover: hover) and (pointer: fine).",
+      "Do respetar \"reducir movimiento\": toda animación pasa por --ease-out (cubic-bezier(0.23, 1, 0.32, 1)) y se anula con prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't verse genérica ni recargada: nada de plantillas de tienda online, sombras exageradas ni demasiados colores.",
+      "Don't usar el dorado ni el amarillo como fondo de grandes superficies. El dorado pálido (#f4e8d0) es el único fondo dorado y solo para un bloque.",
+      "Don't usar fotos de stock ni imágenes de personajes con marca registrada.",
+      "Don't inventar reseñas, testimonios, descuentos ni cifras.",
+      "Don't agregar carrito de compras ni pagos en línea: el pedido es por WhatsApp."
+    ]
+  }
+}
